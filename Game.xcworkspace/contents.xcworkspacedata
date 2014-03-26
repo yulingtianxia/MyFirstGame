@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MyFirstGame.xcodeproj">
+      location = "group:MyFirstGame/MyFirstGame.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DragDrop/DragDrop.xcodeproj">
    </FileRef>
 </Workspace>

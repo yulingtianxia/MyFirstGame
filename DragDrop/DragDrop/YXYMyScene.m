@@ -17,6 +17,7 @@
         background = [SKSpriteNode spriteNodeWithImageNamed:@"blue-shooting-stars"];
         [background setName:@"background"];
         [background setAnchorPoint:CGPointZero];
+        
         [self addChild:background];
         
         
@@ -43,9 +44,14 @@
     [self selectNodeForTouch:positionInScene];
 }
 
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+	UITouch *touch = [touches anyObject];
+	CGPoint positionInScene = [touch locationInNode:self];
+	CGPoint previousPosition = [touch previousLocationInNode:self];
     
+	CGPoint translation = CGPointMake(positionInScene.x - previousPosition.x, positionInScene.y - previousPosition.y);
+    
+	[self panForTranslation:translation];
 }
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
@@ -74,5 +80,23 @@
 
 float degToRad(float degree) {
 	return degree / 180.0f * M_PI;
+}
+- (CGPoint)boundLayerPos:(CGPoint)newPos {
+    CGSize winSize = self.size;
+    CGPoint retval = newPos;
+    retval.x = MIN(retval.x, 0);
+    retval.x = MAX(retval.x, -[background size].width+ winSize.width);
+    retval.y = [self position].y;
+    return retval;
+}
+
+- (void)panForTranslation:(CGPoint)translation {
+    CGPoint position = [selectedNode position];
+    if([[selectedNode name] isEqualToString:kAnimalNodeName]) {
+        [selectedNode setPosition:CGPointMake(position.x + translation.x, position.y + translation.y)];
+    } else {
+        CGPoint newPos = CGPointMake(position.x + translation.x, position.y + translation.y);
+        [background setPosition:[self boundLayerPos:newPos]];
+    }
 }
 @end

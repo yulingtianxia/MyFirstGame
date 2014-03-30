@@ -36,6 +36,11 @@
     return self;
 }
 
+-(void)didMoveToView:(SKView *)view
+{
+    UIPanGestureRecognizer *gesturerecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanFrom:)];
+    [[self view] addGestureRecognizer:gesturerecognizer];
+}
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     
@@ -43,16 +48,16 @@
     CGPoint positionInScene = [touch locationInNode:self];
     [self selectNodeForTouch:positionInScene];
 }
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-	UITouch *touch = [touches anyObject];
-	CGPoint positionInScene = [touch locationInNode:self];
-	CGPoint previousPosition = [touch previousLocationInNode:self];
-    
-	CGPoint translation = CGPointMake(positionInScene.x - previousPosition.x, positionInScene.y - previousPosition.y);
-    
-	[self panForTranslation:translation];
-}
+//
+//- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+//	UITouch *touch = [touches anyObject];
+//	CGPoint positionInScene = [touch locationInNode:self];
+//	CGPoint previousPosition = [touch previousLocationInNode:self];
+//    
+//	CGPoint translation = CGPointMake(positionInScene.x - previousPosition.x, positionInScene.y - previousPosition.y);
+//    
+//	[self panForTranslation:translation];
+//}
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
 }
@@ -78,6 +83,42 @@
     
 }
 
+- (void)handlePanFrom:(UIPanGestureRecognizer *)recognizer {
+	if (recognizer.state == UIGestureRecognizerStateBegan) {
+        
+        CGPoint touchLocation = [recognizer locationInView:recognizer.view];
+        
+        touchLocation = [self convertPointFromView:touchLocation];
+        
+        [self selectNodeForTouch:touchLocation];
+        
+    } else if (recognizer.state == UIGestureRecognizerStateChanged) {
+        
+        CGPoint translation = [recognizer translationInView:recognizer.view];
+        translation = CGPointMake(translation.x, -translation.y);
+        [self panForTranslation:translation];
+        [recognizer setTranslation:CGPointZero inView:recognizer.view];
+        
+    } else if (recognizer.state == UIGestureRecognizerStateEnded) {
+        
+        if (![[selectedNode name] isEqualToString:kAnimalNodeName]) {
+            float scrollDuration = 0.2;
+            CGPoint velocity = [recognizer velocityInView:recognizer.view];
+            CGPoint pos = [selectedNode position];
+            CGPoint p = mult(velocity, scrollDuration);
+            
+            CGPoint newPos = CGPointMake(pos.x + p.x, pos.y + p.y);
+            newPos = [self boundLayerPos:newPos];
+            [selectedNode removeAllActions];
+            
+            SKAction *moveTo = [SKAction moveTo:newPos duration:scrollDuration];
+            [moveTo setTimingMode:SKActionTimingEaseOut];
+            [selectedNode runAction:moveTo];
+        }
+        
+    }
+}
+
 float degToRad(float degree) {
 	return degree / 180.0f * M_PI;
 }
@@ -98,5 +139,9 @@ float degToRad(float degree) {
         CGPoint newPos = CGPointMake(position.x + translation.x, position.y + translation.y);
         [background setPosition:[self boundLayerPos:newPos]];
     }
+}
+
+CGPoint mult(const CGPoint v, const CGFloat s) {
+	return CGPointMake(v.x*s, v.y*s);
 }
 @end

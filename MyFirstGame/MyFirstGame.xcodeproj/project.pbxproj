@@ -92,7 +92,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A425733618DEC6D300AE4706 /* View */ = {
+		A425733618DEC6D300AE4706 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
 				A4A9043918DC517400853CE4 /* YXYMyScene.h */,
@@ -100,7 +100,7 @@
 				A425733318DEC6CC00AE4706 /* YXYGameOverScene.h */,
 				A425733418DEC6CC00AE4706 /* YXYGameOverScene.m */,
 			);
-			name = View;
+			name = Scene;
 			sourceTree = "<group>";
 		};
 		A4557ADD18DE8A750060A32E /* Sounds */ = {
@@ -146,7 +146,7 @@
 		A4A9042718DC517400853CE4 /* MyFirstGame */ = {
 			isa = PBXGroup;
 			children = (
-				A425733618DEC6D300AE4706 /* View */,
+				A425733618DEC6D300AE4706 /* Scene */,
 				A4A9043018DC517400853CE4 /* YXYAppDelegate.h */,
 				A4A9043118DC517400853CE4 /* YXYAppDelegate.m */,
 				A4A9043318DC517400853CE4 /* Main.storyboard */,

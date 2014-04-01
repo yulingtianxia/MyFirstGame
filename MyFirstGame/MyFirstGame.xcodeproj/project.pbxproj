@@ -29,20 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A44F1D0D18EAF0F200A4671B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A44F1D0818EAF0F100A4671B /* AnimatedBear.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A44F1CC918EAF0F100A4671B;
-			remoteInfo = AnimatedBear;
-		};
-		A44F1D0F18EAF0F200A4671B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A44F1D0818EAF0F100A4671B /* AnimatedBear.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A44F1CF118EAF0F100A4671B;
-			remoteInfo = AnimatedBearTests;
-		};
 		A4A9044918DC517400853CE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A4A9041418DC517400853CE4 /* Project object */;
@@ -55,7 +41,6 @@
 /* Begin PBXFileReference section */
 		A425733318DEC6CC00AE4706 /* YXYGameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXYGameOverScene.h; sourceTree = "<group>"; };
 		A425733418DEC6CC00AE4706 /* YXYGameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXYGameOverScene.m; sourceTree = "<group>"; };
-		A44F1D0818EAF0F100A4671B /* AnimatedBear.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AnimatedBear.xcodeproj; path = AnimatedBear/AnimatedBear.xcodeproj; sourceTree = "<group>"; };
 		A4557ADE18DE8A750060A32E /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
 		A4557ADF18DE8A750060A32E /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
 		A4A9041C18DC517400853CE4 /* MyFirstGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,15 +103,6 @@
 			name = Scene;
 			sourceTree = "<group>";
 		};
-		A44F1D0918EAF0F100A4671B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A44F1D0E18EAF0F200A4671B /* AnimatedBear.app */,
-				A44F1D1018EAF0F200A4671B /* AnimatedBearTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		A4557ADD18DE8A750060A32E /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +115,6 @@
 		A4A9041318DC517400853CE4 = {
 			isa = PBXGroup;
 			children = (
-				A44F1D0818EAF0F100A4671B /* AnimatedBear.xcodeproj */,
 				A4A9042718DC517400853CE4 /* MyFirstGame */,
 				A4A9044B18DC517400853CE4 /* MyFirstGameTests */,
 				A4A9041E18DC517400853CE4 /* Frameworks */,
@@ -277,12 +252,6 @@
 			mainGroup = A4A9041318DC517400853CE4;
 			productRefGroup = A4A9041D18DC517400853CE4 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A44F1D0918EAF0F100A4671B /* Products */;
-					ProjectRef = A44F1D0818EAF0F100A4671B /* AnimatedBear.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				A4A9041B18DC517400853CE4 /* MyFirstGame */,
@@ -290,23 +259,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		A44F1D0E18EAF0F200A4671B /* AnimatedBear.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = AnimatedBear.app;
-			remoteRef = A44F1D0D18EAF0F200A4671B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A44F1D1018EAF0F200A4671B /* AnimatedBearTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AnimatedBearTests.xctest;
-			remoteRef = A44F1D0F18EAF0F200A4671B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A4A9041A18DC517400853CE4 /* Resources */ = {

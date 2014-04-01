@@ -9,5 +9,6 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface YXYMyScene : SKScene
-
+@property SKSpriteNode *bear;
+@property NSArray *bearWalkingFrames;
 @end

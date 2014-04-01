@@ -24,6 +24,7 @@
 		A44F1CF518EAF0F100A4671B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A44F1CD018EAF0F100A4671B /* UIKit.framework */; };
 		A44F1CFD18EAF0F100A4671B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A44F1CFB18EAF0F100A4671B /* InfoPlist.strings */; };
 		A44F1CFF18EAF0F100A4671B /* AnimatedBearTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A44F1CFE18EAF0F100A4671B /* AnimatedBearTests.m */; };
+		A44F1D1318EAF64900A4671B /* BearImages.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A44F1D1218EAF64900A4671B /* BearImages.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		A44F1CFA18EAF0F100A4671B /* AnimatedBearTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AnimatedBearTests-Info.plist"; sourceTree = "<group>"; };
 		A44F1CFC18EAF0F100A4671B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A44F1CFE18EAF0F100A4671B /* AnimatedBearTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimatedBearTests.m; sourceTree = "<group>"; };
+		A44F1D1218EAF64900A4671B /* BearImages.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = BearImages.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		A44F1CD418EAF0F100A4671B /* AnimatedBear */ = {
 			isa = PBXGroup;
 			children = (
+				A44F1D1218EAF64900A4671B /* BearImages.atlas */,
 				A44F1CDD18EAF0F100A4671B /* YXYAppDelegate.h */,
 				A44F1CDE18EAF0F100A4671B /* YXYAppDelegate.m */,
 				A44F1CE018EAF0F100A4671B /* Main.storyboard */,
@@ -243,6 +246,7 @@
 			files = (
 				A44F1CD918EAF0F100A4671B /* InfoPlist.strings in Resources */,
 				A44F1CEC18EAF0F100A4671B /* Images.xcassets in Resources */,
+				A44F1D1318EAF64900A4671B /* BearImages.atlas in Resources */,
 				A44F1CEA18EAF0F100A4671B /* Spaceship.png in Resources */,
 				A44F1CE218EAF0F100A4671B /* Main.storyboard in Resources */,
 			);
@@ -475,6 +479,7 @@
 				A44F1D0418EAF0F100A4671B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A44F1D0518EAF0F100A4671B /* Build configuration list for PBXNativeTarget "AnimatedBearTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +488,7 @@
 				A44F1D0718EAF0F100A4671B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

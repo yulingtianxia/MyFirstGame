@@ -22,7 +22,7 @@ static const uint32_t monsterCategory        =  0x1 << 1;
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
-        NSLog(@"size:%@",NSStringFromCGSize(size));
+//        NSLog(@"size:%@",NSStringFromCGSize(size));
         background = [SKSpriteNode spriteNodeWithImageNamed:@"background"];
         [background setAnchorPoint:CGPointZero];
         [self addChild:background];
@@ -96,7 +96,7 @@ static const uint32_t monsterCategory        =  0x1 << 1;
         SKSpriteNode * projectile = [SKSpriteNode spriteNodeWithImageNamed:@"projectile"];
         projectile.position = player.position;
         [background addChild:projectile];
-        projectile.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:projectile.size.width/2];
+        projectile.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:projectile.size];
         projectile.physicsBody.dynamic = YES;
         projectile.physicsBody.categoryBitMask = projectileCategory;
         projectile.physicsBody.contactTestBitMask = monsterCategory;
@@ -110,7 +110,6 @@ static const uint32_t monsterCategory        =  0x1 << 1;
 }
 
 - (void)projectile:(SKSpriteNode *)projectile didCollideWithMonster:(SKSpriteNode *)monster {
-    NSLog(@"Hit");
     [projectile removeFromParent];
     [monster removeFromParent];
     self.monstersDestroyed++;

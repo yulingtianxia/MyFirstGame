@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Physics/Physics.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:AnimatedBear/AnimatedBear.xcodeproj">
    </FileRef>
    <FileRef

@@ -24,6 +24,8 @@
 		A4342E8418F56EA800361B4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4342E5F18F56EA800361B4F /* UIKit.framework */; };
 		A4342E8C18F56EA800361B4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4342E8A18F56EA800361B4F /* InfoPlist.strings */; };
 		A4342E8E18F56EA800361B4F /* PhysicsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4342E8D18F56EA800361B4F /* PhysicsTests.m */; };
+		A4EBAC8118F69C07009784E7 /* MyFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = A4EBAC7F18F69C07009784E7 /* MyFire.sks */; };
+		A4EBAC8218F69C07009784E7 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = A4EBAC8018F69C07009784E7 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		A4342E8918F56EA800361B4F /* PhysicsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhysicsTests-Info.plist"; sourceTree = "<group>"; };
 		A4342E8B18F56EA800361B4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4342E8D18F56EA800361B4F /* PhysicsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhysicsTests.m; sourceTree = "<group>"; };
+		A4EBAC7F18F69C07009784E7 /* MyFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyFire.sks; sourceTree = "<group>"; };
+		A4EBAC8018F69C07009784E7 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 				A4342E7318F56EA800361B4F /* YXYViewController.m */,
 				A4342E7518F56EA800361B4F /* YXYMyScene.h */,
 				A4342E7618F56EA800361B4F /* YXYMyScene.m */,
+				A4EBAC7F18F69C07009784E7 /* MyFire.sks */,
+				A4EBAC8018F69C07009784E7 /* spark.png */,
 				A4342E7818F56EA800361B4F /* Spaceship.png */,
 				A4342E7A18F56EA800361B4F /* Images.xcassets */,
 				A4342E6418F56EA800361B4F /* Supporting Files */,
@@ -242,9 +248,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4342E6818F56EA800361B4F /* InfoPlist.strings in Resources */,
+				A4EBAC8218F69C07009784E7 /* spark.png in Resources */,
 				A4342E7B18F56EA800361B4F /* Images.xcassets in Resources */,
 				A4342E7918F56EA800361B4F /* Spaceship.png in Resources */,
 				A4342E7118F56EA800361B4F /* Main.storyboard in Resources */,
+				A4EBAC8118F69C07009784E7 /* MyFire.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +481,7 @@
 				A4342E9318F56EA800361B4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4342E9418F56EA800361B4F /* Build configuration list for PBXNativeTarget "PhysicsTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +490,7 @@
 				A4342E9618F56EA800361B4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

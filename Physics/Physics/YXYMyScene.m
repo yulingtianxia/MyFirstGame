@@ -19,15 +19,18 @@
         hunter = [[SKSpriteNode alloc] initWithTexture:[SKTexture textureWithImage:[UIImage imageNamed:@"Spaceship"]] color:[UIColor clearColor] size:CGSizeMake(huntRadius, huntRadius)];
         hunter.position=CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
         hunter.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:hunter.size];
+        
         hunter.physicsBody.dynamic = NO;
         [self addChild:hunter];
-        SKAction *pulseRed = [SKAction sequence:@[
-                                                  [SKAction colorizeWithColor:[SKColor redColor] colorBlendFactor:1.0 duration:0.15],
-                                                  [SKAction waitForDuration:0.1],
-                                                  [SKAction colorizeWithColorBlendFactor:0.0 duration:0.15]]];
-        [hunter runAction: pulseRed];
-
-        [hunter runAction:[SKAction repeatActionForever:pulseRed]];
+        SKEmitterNode * fire = [self newSmokeEmitter];
+        fire.position = CGPointMake(0, -hunter.size.height/2);
+        [hunter addChild:fire];
+//        SKAction *pulseRed = [SKAction sequence:@[
+//                                                  [SKAction colorizeWithColor:[SKColor redColor] colorBlendFactor:1.0 duration:0.15],
+//                                                  [SKAction waitForDuration:0.1],
+//                                                  [SKAction colorizeWithColorBlendFactor:0.0 duration:0.15]]];
+//
+//        [hunter runAction:[SKAction repeatActionForever:pulseRed]];
         SKAction * makeRocks = [SKAction sequence:@[
                                                     [SKAction performSelector:@selector(addRock) onTarget:self],
                                                     [SKAction waitForDuration:0.10 withRange:0.15]
@@ -62,7 +65,16 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     rock.name = @"rock";
     rock.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:rock.size];
     rock.physicsBody.usesPreciseCollisionDetection = YES;
+    
     [self addChild:rock];
+    
+}
+
+- (SKEmitterNode *) newSmokeEmitter
+{
+    NSString *smokePath = [[NSBundle mainBundle] pathForResource:@"MyFire" ofType:@"sks"];
+    SKEmitterNode *smoke = [NSKeyedUnarchiver unarchiveObjectWithFile:smokePath];
+    return smoke;
 }
 
 -(void) didSimulatePhysics{

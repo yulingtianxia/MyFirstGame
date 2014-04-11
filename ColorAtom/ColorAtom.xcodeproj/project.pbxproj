@@ -61,6 +61,7 @@
 		A4E9E51318F7D18E000ADEAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4E9E51518F7D18E000ADEAE /* ColorAtomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorAtomTests.m; sourceTree = "<group>"; };
 		A4E9E52018F7E854000ADEAE /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		A4E9E52218F8358B000ADEAE /* YXYContactHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXYContactHandler.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				A4E9E52018F7E854000ADEAE /* Define.h */,
+				A4E9E52218F8358B000ADEAE /* YXYContactHandler.h */,
 			);
 			name = Util;
 			sourceTree = "<group>";

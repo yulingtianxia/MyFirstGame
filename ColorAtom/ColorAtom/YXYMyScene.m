@@ -79,11 +79,14 @@ bool isAllAtomStatic = YES;
 }
 -(void)makeAtom
 {
-    SKSpriteNode *Atom = [[SKSpriteNode alloc] initWithTexture:[SKTexture textureWithImageNamed:@"Atom"] color:[SKColor blackColor] size:CGSizeMake(AtomRadius*2, AtomRadius*2)];
+    SKSpriteNode *Atom = [[SKSpriteNode alloc] initWithTexture:[SKTexture textureWithImageNamed:@"Atom"] color:[SKColor colorWithRed:skRandf() green:skRandf() blue:skRandf() alpha:1] size:CGSizeMake(AtomRadius*2, AtomRadius*2)];
     Atom.position = CGPointMake(skRand(AtomRadius, self.size.width-AtomRadius),skRand(AtomRadius, self.size.height-AtomRadius));
     Atom.colorBlendFactor = 1.0;
     Atom.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:AtomRadius];
     Atom.physicsBody.dynamic = YES;
+    Atom.physicsBody.categoryBitMask = AtomCategory;
+    Atom.physicsBody.contactTestBitMask = AtomCategory;
+    
     Atom.physicsBody.linearDamping = 0.8;
     Atom.name = AtomName;
     [self addChild:Atom];
@@ -128,4 +131,9 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     return skRandf()*(high - low) + low;
 }
 
+#pragma mark SKPhysicsContactDelegate
+-(void)didBeginContact:(SKPhysicsContact *)contact
+{
+    
+}
 @end

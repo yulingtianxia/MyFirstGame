@@ -7,7 +7,8 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-
+#import "Define.h"
 @interface YXYMyScene : SKScene
-
+@property SKSpriteNode *touchedAtom;
+@property SKNode * debugOverlay; 
 @end

@@ -60,6 +60,7 @@
 		A4E9E51118F7D18E000ADEAE /* ColorAtomTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ColorAtomTests-Info.plist"; sourceTree = "<group>"; };
 		A4E9E51318F7D18E000ADEAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4E9E51518F7D18E000ADEAE /* ColorAtomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorAtomTests.m; sourceTree = "<group>"; };
+		A4E9E52018F7E854000ADEAE /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,13 +122,13 @@
 		A4E9E4EB18F7D18E000ADEAE /* ColorAtom */ = {
 			isa = PBXGroup;
 			children = (
+				A4E9E52118F7E85C000ADEAE /* Scene */,
+				A4E9E51F18F7E82F000ADEAE /* Util */,
 				A4E9E4F418F7D18E000ADEAE /* YXYAppDelegate.h */,
 				A4E9E4F518F7D18E000ADEAE /* YXYAppDelegate.m */,
 				A4E9E4F718F7D18E000ADEAE /* Main.storyboard */,
 				A4E9E4FA18F7D18E000ADEAE /* YXYViewController.h */,
 				A4E9E4FB18F7D18E000ADEAE /* YXYViewController.m */,
-				A4E9E4FD18F7D18E000ADEAE /* YXYMyScene.h */,
-				A4E9E4FE18F7D18E000ADEAE /* YXYMyScene.m */,
 				A4E9E50018F7D18E000ADEAE /* Spaceship.png */,
 				A4E9E50218F7D18E000ADEAE /* Images.xcassets */,
 				A4E9E4EC18F7D18E000ADEAE /* Supporting Files */,
@@ -162,6 +163,23 @@
 				A4E9E51218F7D18E000ADEAE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4E9E51F18F7E82F000ADEAE /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A4E9E52018F7E854000ADEAE /* Define.h */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		A4E9E52118F7E85C000ADEAE /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				A4E9E4FD18F7D18E000ADEAE /* YXYMyScene.h */,
+				A4E9E4FE18F7D18E000ADEAE /* YXYMyScene.m */,
+			);
+			name = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

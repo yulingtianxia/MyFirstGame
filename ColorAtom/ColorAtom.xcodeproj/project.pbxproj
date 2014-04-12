@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A46E099418F90A6D00BCC91D /* YXYAtomNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E099318F90A6D00BCC91D /* YXYAtomNode.m */; };
 		A4E9E4E418F7D18D000ADEAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E9E4E318F7D18D000ADEAE /* Foundation.framework */; };
 		A4E9E4E618F7D18E000ADEAE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E9E4E518F7D18E000ADEAE /* CoreGraphics.framework */; };
 		A4E9E4E818F7D18E000ADEAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E9E4E718F7D18E000ADEAE /* UIKit.framework */; };
@@ -37,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A46E098F18F908F300BCC91D /* NodeCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeCategories.h; sourceTree = "<group>"; };
+		A46E099018F9096A00BCC91D /* RandomHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RandomHelper.h; sourceTree = "<group>"; };
+		A46E099218F90A6D00BCC91D /* YXYAtomNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXYAtomNode.h; sourceTree = "<group>"; };
+		A46E099318F90A6D00BCC91D /* YXYAtomNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXYAtomNode.m; sourceTree = "<group>"; };
 		A4E9E4E018F7D18D000ADEAE /* ColorAtom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorAtom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E9E4E318F7D18D000ADEAE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4E9E4E518F7D18E000ADEAE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,7 +66,6 @@
 		A4E9E51318F7D18E000ADEAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4E9E51518F7D18E000ADEAE /* ColorAtomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorAtomTests.m; sourceTree = "<group>"; };
 		A4E9E52018F7E854000ADEAE /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
-		A4E9E52218F8358B000ADEAE /* YXYContactEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXYContactEvent.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A46E099118F909C700BCC91D /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				A46E099218F90A6D00BCC91D /* YXYAtomNode.h */,
+				A46E099318F90A6D00BCC91D /* YXYAtomNode.m */,
+			);
+			name = Nodes;
+			sourceTree = "<group>";
+		};
 		A4E9E4D718F7D18D000ADEAE = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +136,7 @@
 		A4E9E4EB18F7D18E000ADEAE /* ColorAtom */ = {
 			isa = PBXGroup;
 			children = (
+				A46E099118F909C700BCC91D /* Nodes */,
 				A4E9E52118F7E85C000ADEAE /* Scene */,
 				A4E9E51F18F7E82F000ADEAE /* Util */,
 				A4E9E4F418F7D18E000ADEAE /* YXYAppDelegate.h */,
@@ -170,7 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				A4E9E52018F7E854000ADEAE /* Define.h */,
-				A4E9E52218F8358B000ADEAE /* YXYContactEvent.h */,
+				A46E098F18F908F300BCC91D /* NodeCategories.h */,
+				A46E099018F9096A00BCC91D /* RandomHelper.h */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -287,6 +302,7 @@
 				A4E9E4FF18F7D18E000ADEAE /* YXYMyScene.m in Sources */,
 				A4E9E4F218F7D18E000ADEAE /* main.m in Sources */,
 				A4E9E4F618F7D18E000ADEAE /* YXYAppDelegate.m in Sources */,
+				A46E099418F90A6D00BCC91D /* YXYAtomNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

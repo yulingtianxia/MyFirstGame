@@ -8,8 +8,7 @@
 
 #ifndef ColorAtom_Define_h
 #define ColorAtom_Define_h
-static const uint32_t AtomCategory     =  0x1 << 0;
-static const uint32_t OtherCategory    =  0x1 << 1;
+
 #define AtomRadius 30
 #define AtomName @"atom"
 #define ZERO 0.3

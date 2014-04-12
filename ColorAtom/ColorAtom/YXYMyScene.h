@@ -8,8 +8,10 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "Define.h"
-#import "YXYContactHandler.h"
+#import "NodeCategories.h"
+#import "RandomHelper.h"
+#import "YXYAtomNode.h"
 @interface YXYMyScene : SKScene <SKPhysicsContactDelegate>
-@property SKSpriteNode *touchedAtom;
+@property YXYAtomNode *touchedAtom;
 @property SKNode * debugOverlay; 
 @end

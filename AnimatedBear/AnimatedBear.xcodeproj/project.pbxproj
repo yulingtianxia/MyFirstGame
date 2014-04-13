@@ -16,7 +16,7 @@
 		A44F1CDF18EAF0F100A4671B /* YXYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A44F1CDE18EAF0F100A4671B /* YXYAppDelegate.m */; };
 		A44F1CE218EAF0F100A4671B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A44F1CE018EAF0F100A4671B /* Main.storyboard */; };
 		A44F1CE518EAF0F100A4671B /* YXYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A44F1CE418EAF0F100A4671B /* YXYViewController.m */; };
-		A44F1CE818EAF0F100A4671B /* YXYMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A44F1CE718EAF0F100A4671B /* YXYMyScene.m */; };
+		A44F1CE818EAF0F100A4671B /* PlayFieldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A44F1CE718EAF0F100A4671B /* PlayFieldScene.m */; };
 		A44F1CEA18EAF0F100A4671B /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = A44F1CE918EAF0F100A4671B /* Spaceship.png */; };
 		A44F1CEC18EAF0F100A4671B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A44F1CEB18EAF0F100A4671B /* Images.xcassets */; };
 		A44F1CF318EAF0F100A4671B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A44F1CF218EAF0F100A4671B /* XCTest.framework */; };
@@ -52,8 +52,8 @@
 		A44F1CE118EAF0F100A4671B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A44F1CE318EAF0F100A4671B /* YXYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXYViewController.h; sourceTree = "<group>"; };
 		A44F1CE418EAF0F100A4671B /* YXYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXYViewController.m; sourceTree = "<group>"; };
-		A44F1CE618EAF0F100A4671B /* YXYMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXYMyScene.h; sourceTree = "<group>"; };
-		A44F1CE718EAF0F100A4671B /* YXYMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXYMyScene.m; sourceTree = "<group>"; };
+		A44F1CE618EAF0F100A4671B /* PlayFieldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayFieldScene.h; sourceTree = "<group>"; };
+		A44F1CE718EAF0F100A4671B /* PlayFieldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayFieldScene.m; sourceTree = "<group>"; };
 		A44F1CE918EAF0F100A4671B /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		A44F1CEB18EAF0F100A4671B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A44F1CF118EAF0F100A4671B /* AnimatedBearTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimatedBearTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,8 +129,8 @@
 				A44F1CE018EAF0F100A4671B /* Main.storyboard */,
 				A44F1CE318EAF0F100A4671B /* YXYViewController.h */,
 				A44F1CE418EAF0F100A4671B /* YXYViewController.m */,
-				A44F1CE618EAF0F100A4671B /* YXYMyScene.h */,
-				A44F1CE718EAF0F100A4671B /* YXYMyScene.m */,
+				A44F1CE618EAF0F100A4671B /* PlayFieldScene.h */,
+				A44F1CE718EAF0F100A4671B /* PlayFieldScene.m */,
 				A44F1CE918EAF0F100A4671B /* Spaceship.png */,
 				A44F1CEB18EAF0F100A4671B /* Images.xcassets */,
 				A44F1CD518EAF0F100A4671B /* Supporting Files */,
@@ -268,7 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A44F1CE518EAF0F100A4671B /* YXYViewController.m in Sources */,
-				A44F1CE818EAF0F100A4671B /* YXYMyScene.m in Sources */,
+				A44F1CE818EAF0F100A4671B /* PlayFieldScene.m in Sources */,
 				A44F1CDB18EAF0F100A4671B /* main.m in Sources */,
 				A44F1CDF18EAF0F100A4671B /* YXYAppDelegate.m in Sources */,
 			);

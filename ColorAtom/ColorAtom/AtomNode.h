@@ -10,6 +10,6 @@
 #import "Define.h"
 #import "RandomHelper.h"
 #import "NodeCategories.h"
-@interface YXYAtomNode : SKSpriteNode
+@interface AtomNode : SKSpriteNode
 - (id)initWithName:(NSString *)name;
 @end

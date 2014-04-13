@@ -6,11 +6,11 @@
 //  Copyright (c) 2014年 杨萧玉. All rights reserved.
 //
 
-#import "YXYMyScene.h"
+#import "PlayFieldScene.h"
 #import "YXYGameOverScene.h"
 static const uint32_t projectileCategory     =  0x1 << 0;
 static const uint32_t monsterCategory        =  0x1 << 1;
-@implementation YXYMyScene
+@implementation PlayFieldScene
 
 @synthesize player;
 @synthesize background;

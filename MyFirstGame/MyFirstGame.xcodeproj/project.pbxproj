@@ -19,7 +19,7 @@
 		A4A9043218DC517400853CE4 /* YXYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A9043118DC517400853CE4 /* YXYAppDelegate.m */; };
 		A4A9043518DC517400853CE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4A9043318DC517400853CE4 /* Main.storyboard */; };
 		A4A9043818DC517400853CE4 /* YXYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A9043718DC517400853CE4 /* YXYViewController.m */; };
-		A4A9043B18DC517400853CE4 /* YXYMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A9043A18DC517400853CE4 /* YXYMyScene.m */; };
+		A4A9043B18DC517400853CE4 /* PlayFieldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A9043A18DC517400853CE4 /* PlayFieldScene.m */; };
 		A4A9043F18DC517400853CE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4A9043E18DC517400853CE4 /* Images.xcassets */; };
 		A4A9044618DC517400853CE4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A9044518DC517400853CE4 /* XCTest.framework */; };
 		A4A9044718DC517400853CE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A9041F18DC517400853CE4 /* Foundation.framework */; };
@@ -57,8 +57,8 @@
 		A4A9043418DC517400853CE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4A9043618DC517400853CE4 /* YXYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXYViewController.h; sourceTree = "<group>"; };
 		A4A9043718DC517400853CE4 /* YXYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXYViewController.m; sourceTree = "<group>"; };
-		A4A9043918DC517400853CE4 /* YXYMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXYMyScene.h; sourceTree = "<group>"; };
-		A4A9043A18DC517400853CE4 /* YXYMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXYMyScene.m; sourceTree = "<group>"; };
+		A4A9043918DC517400853CE4 /* PlayFieldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayFieldScene.h; sourceTree = "<group>"; };
+		A4A9043A18DC517400853CE4 /* PlayFieldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayFieldScene.m; sourceTree = "<group>"; };
 		A4A9043E18DC517400853CE4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A4A9044418DC517400853CE4 /* MyFirstGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFirstGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A9044518DC517400853CE4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -95,8 +95,8 @@
 		A425733618DEC6D300AE4706 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				A4A9043918DC517400853CE4 /* YXYMyScene.h */,
-				A4A9043A18DC517400853CE4 /* YXYMyScene.m */,
+				A4A9043918DC517400853CE4 /* PlayFieldScene.h */,
+				A4A9043A18DC517400853CE4 /* PlayFieldScene.m */,
 				A425733318DEC6CC00AE4706 /* YXYGameOverScene.h */,
 				A425733418DEC6CC00AE4706 /* YXYGameOverScene.m */,
 			);
@@ -290,7 +290,7 @@
 			files = (
 				A425733518DEC6CC00AE4706 /* YXYGameOverScene.m in Sources */,
 				A4A9043818DC517400853CE4 /* YXYViewController.m in Sources */,
-				A4A9043B18DC517400853CE4 /* YXYMyScene.m in Sources */,
+				A4A9043B18DC517400853CE4 /* PlayFieldScene.m in Sources */,
 				A4A9042E18DC517400853CE4 /* main.m in Sources */,
 				A4A9043218DC517400853CE4 /* YXYAppDelegate.m in Sources */,
 			);

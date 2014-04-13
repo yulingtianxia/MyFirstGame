@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A46E099418F90A6D00BCC91D /* YXYAtomNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E099318F90A6D00BCC91D /* YXYAtomNode.m */; };
+		A46E099418F90A6D00BCC91D /* AtomNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E099318F90A6D00BCC91D /* AtomNode.m */; };
+		A46E099718F9178D00BCC91D /* YXYDebugNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A46E099618F9178D00BCC91D /* YXYDebugNode.m */; };
 		A4E9E4E418F7D18D000ADEAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E9E4E318F7D18D000ADEAE /* Foundation.framework */; };
 		A4E9E4E618F7D18E000ADEAE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E9E4E518F7D18E000ADEAE /* CoreGraphics.framework */; };
 		A4E9E4E818F7D18E000ADEAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E9E4E718F7D18E000ADEAE /* UIKit.framework */; };
@@ -17,7 +18,7 @@
 		A4E9E4F618F7D18E000ADEAE /* YXYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E9E4F518F7D18E000ADEAE /* YXYAppDelegate.m */; };
 		A4E9E4F918F7D18E000ADEAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E9E4F718F7D18E000ADEAE /* Main.storyboard */; };
 		A4E9E4FC18F7D18E000ADEAE /* YXYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E9E4FB18F7D18E000ADEAE /* YXYViewController.m */; };
-		A4E9E4FF18F7D18E000ADEAE /* YXYMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E9E4FE18F7D18E000ADEAE /* YXYMyScene.m */; };
+		A4E9E4FF18F7D18E000ADEAE /* PlayFieldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E9E4FE18F7D18E000ADEAE /* PlayFieldScene.m */; };
 		A4E9E50118F7D18E000ADEAE /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = A4E9E50018F7D18E000ADEAE /* Spaceship.png */; };
 		A4E9E50318F7D18E000ADEAE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4E9E50218F7D18E000ADEAE /* Images.xcassets */; };
 		A4E9E50A18F7D18E000ADEAE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E9E50918F7D18E000ADEAE /* XCTest.framework */; };
@@ -25,6 +26,10 @@
 		A4E9E50C18F7D18E000ADEAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E9E4E718F7D18E000ADEAE /* UIKit.framework */; };
 		A4E9E51418F7D18E000ADEAE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4E9E51218F7D18E000ADEAE /* InfoPlist.strings */; };
 		A4E9E51618F7D18E000ADEAE /* ColorAtomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E9E51518F7D18E000ADEAE /* ColorAtomTests.m */; };
+		A4EE478818FA627C003A0B74 /* ContactVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EE478718FA627C003A0B74 /* ContactVisitor.m */; };
+		A4EE478B18FA6600003A0B74 /* AtomNodeContactVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EE478A18FA6600003A0B74 /* AtomNodeContactVisitor.m */; };
+		A4EE478E18FA6A0C003A0B74 /* VisitablePhysicsBody.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EE478D18FA6A0C003A0B74 /* VisitablePhysicsBody.m */; };
+		A4EE479118FA70B6003A0B74 /* PlayFieldSceneContactVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EE479018FA70B6003A0B74 /* PlayFieldSceneContactVisitor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +45,10 @@
 /* Begin PBXFileReference section */
 		A46E098F18F908F300BCC91D /* NodeCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeCategories.h; sourceTree = "<group>"; };
 		A46E099018F9096A00BCC91D /* RandomHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RandomHelper.h; sourceTree = "<group>"; };
-		A46E099218F90A6D00BCC91D /* YXYAtomNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXYAtomNode.h; sourceTree = "<group>"; };
-		A46E099318F90A6D00BCC91D /* YXYAtomNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXYAtomNode.m; sourceTree = "<group>"; };
+		A46E099218F90A6D00BCC91D /* AtomNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtomNode.h; sourceTree = "<group>"; };
+		A46E099318F90A6D00BCC91D /* AtomNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtomNode.m; sourceTree = "<group>"; };
+		A46E099518F9178D00BCC91D /* YXYDebugNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXYDebugNode.h; sourceTree = "<group>"; };
+		A46E099618F9178D00BCC91D /* YXYDebugNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXYDebugNode.m; sourceTree = "<group>"; };
 		A4E9E4E018F7D18D000ADEAE /* ColorAtom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorAtom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E9E4E318F7D18D000ADEAE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4E9E4E518F7D18E000ADEAE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,8 +63,8 @@
 		A4E9E4F818F7D18E000ADEAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4E9E4FA18F7D18E000ADEAE /* YXYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXYViewController.h; sourceTree = "<group>"; };
 		A4E9E4FB18F7D18E000ADEAE /* YXYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXYViewController.m; sourceTree = "<group>"; };
-		A4E9E4FD18F7D18E000ADEAE /* YXYMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXYMyScene.h; sourceTree = "<group>"; };
-		A4E9E4FE18F7D18E000ADEAE /* YXYMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXYMyScene.m; sourceTree = "<group>"; };
+		A4E9E4FD18F7D18E000ADEAE /* PlayFieldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayFieldScene.h; sourceTree = "<group>"; };
+		A4E9E4FE18F7D18E000ADEAE /* PlayFieldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayFieldScene.m; sourceTree = "<group>"; };
 		A4E9E50018F7D18E000ADEAE /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		A4E9E50218F7D18E000ADEAE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A4E9E50818F7D18E000ADEAE /* ColorAtomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorAtomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +73,14 @@
 		A4E9E51318F7D18E000ADEAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4E9E51518F7D18E000ADEAE /* ColorAtomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorAtomTests.m; sourceTree = "<group>"; };
 		A4E9E52018F7E854000ADEAE /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		A4EE478618FA627C003A0B74 /* ContactVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactVisitor.h; sourceTree = "<group>"; };
+		A4EE478718FA627C003A0B74 /* ContactVisitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactVisitor.m; sourceTree = "<group>"; };
+		A4EE478918FA6600003A0B74 /* AtomNodeContactVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtomNodeContactVisitor.h; sourceTree = "<group>"; };
+		A4EE478A18FA6600003A0B74 /* AtomNodeContactVisitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtomNodeContactVisitor.m; sourceTree = "<group>"; };
+		A4EE478C18FA6A0C003A0B74 /* VisitablePhysicsBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisitablePhysicsBody.h; sourceTree = "<group>"; };
+		A4EE478D18FA6A0C003A0B74 /* VisitablePhysicsBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitablePhysicsBody.m; sourceTree = "<group>"; };
+		A4EE478F18FA70B6003A0B74 /* PlayFieldSceneContactVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayFieldSceneContactVisitor.h; sourceTree = "<group>"; };
+		A4EE479018FA70B6003A0B74 /* PlayFieldSceneContactVisitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayFieldSceneContactVisitor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +111,10 @@
 		A46E099118F909C700BCC91D /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
-				A46E099218F90A6D00BCC91D /* YXYAtomNode.h */,
-				A46E099318F90A6D00BCC91D /* YXYAtomNode.m */,
+				A46E099218F90A6D00BCC91D /* AtomNode.h */,
+				A46E099318F90A6D00BCC91D /* AtomNode.m */,
+				A46E099518F9178D00BCC91D /* YXYDebugNode.h */,
+				A46E099618F9178D00BCC91D /* YXYDebugNode.m */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -136,6 +153,7 @@
 		A4E9E4EB18F7D18E000ADEAE /* ColorAtom */ = {
 			isa = PBXGroup;
 			children = (
+				A4EE478518FA6217003A0B74 /* Visitors */,
 				A46E099118F909C700BCC91D /* Nodes */,
 				A4E9E52118F7E85C000ADEAE /* Scene */,
 				A4E9E51F18F7E82F000ADEAE /* Util */,
@@ -186,6 +204,8 @@
 				A4E9E52018F7E854000ADEAE /* Define.h */,
 				A46E098F18F908F300BCC91D /* NodeCategories.h */,
 				A46E099018F9096A00BCC91D /* RandomHelper.h */,
+				A4EE478C18FA6A0C003A0B74 /* VisitablePhysicsBody.h */,
+				A4EE478D18FA6A0C003A0B74 /* VisitablePhysicsBody.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -193,10 +213,23 @@
 		A4E9E52118F7E85C000ADEAE /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				A4E9E4FD18F7D18E000ADEAE /* YXYMyScene.h */,
-				A4E9E4FE18F7D18E000ADEAE /* YXYMyScene.m */,
+				A4E9E4FD18F7D18E000ADEAE /* PlayFieldScene.h */,
+				A4E9E4FE18F7D18E000ADEAE /* PlayFieldScene.m */,
 			);
 			name = Scene;
+			sourceTree = "<group>";
+		};
+		A4EE478518FA6217003A0B74 /* Visitors */ = {
+			isa = PBXGroup;
+			children = (
+				A4EE478618FA627C003A0B74 /* ContactVisitor.h */,
+				A4EE478718FA627C003A0B74 /* ContactVisitor.m */,
+				A4EE478918FA6600003A0B74 /* AtomNodeContactVisitor.h */,
+				A4EE478A18FA6600003A0B74 /* AtomNodeContactVisitor.m */,
+				A4EE478F18FA70B6003A0B74 /* PlayFieldSceneContactVisitor.h */,
+				A4EE479018FA70B6003A0B74 /* PlayFieldSceneContactVisitor.m */,
+			);
+			name = Visitors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,10 +332,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4E9E4FC18F7D18E000ADEAE /* YXYViewController.m in Sources */,
-				A4E9E4FF18F7D18E000ADEAE /* YXYMyScene.m in Sources */,
+				A4E9E4FF18F7D18E000ADEAE /* PlayFieldScene.m in Sources */,
 				A4E9E4F218F7D18E000ADEAE /* main.m in Sources */,
 				A4E9E4F618F7D18E000ADEAE /* YXYAppDelegate.m in Sources */,
-				A46E099418F90A6D00BCC91D /* YXYAtomNode.m in Sources */,
+				A4EE478E18FA6A0C003A0B74 /* VisitablePhysicsBody.m in Sources */,
+				A4EE478818FA627C003A0B74 /* ContactVisitor.m in Sources */,
+				A46E099718F9178D00BCC91D /* YXYDebugNode.m in Sources */,
+				A4EE478B18FA6600003A0B74 /* AtomNodeContactVisitor.m in Sources */,
+				A46E099418F90A6D00BCC91D /* AtomNode.m in Sources */,
+				A4EE479118FA70B6003A0B74 /* PlayFieldSceneContactVisitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

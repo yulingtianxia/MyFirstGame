@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 杨萧玉. All rights reserved.
 //
 
-#import "YXYAtomNode.h"
+#import "AtomNode.h"
 
-@implementation YXYAtomNode
+@implementation AtomNode
 -(id)init
 {
     return [self initWithName:AtomName];
@@ -20,7 +20,7 @@
     self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:AtomRadius];
     self.physicsBody.dynamic = YES;
     self.physicsBody.categoryBitMask = AtomCategory;
-    self.physicsBody.contactTestBitMask = AtomCategory;
+    self.physicsBody.contactTestBitMask = AtomCategory|PlayFieldCategory;
     self.physicsBody.linearDamping = 0.8;
     self.name = AtomName;
     return self;

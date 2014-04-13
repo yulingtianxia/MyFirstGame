@@ -7,7 +7,7 @@
 //
 
 #import "YXYGameOverScene.h"
-#import "YXYMyScene.h"
+#import "PlayFieldScene.h"
 @implementation YXYGameOverScene
 -(id)initWithSize:(CGSize)size won:(BOOL)won {
     if (self = [super initWithSize:size]) {
@@ -46,7 +46,7 @@
                               [SKAction runBlock:^{
              // 5
              SKTransition *reveal = [SKTransition flipHorizontalWithDuration:0.5];
-             SKScene * myScene = [[YXYMyScene alloc] initWithSize:self.size];
+             SKScene * myScene = [[PlayFieldScene alloc] initWithSize:self.size];
              [self.view presentScene:myScene transition: reveal];
          }]
                               ]]

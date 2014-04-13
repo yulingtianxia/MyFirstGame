@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 杨萧玉. All rights reserved.
 //
 
-#import "YXYMyScene.h"
+#import "PlayFieldScene.h"
 
-@implementation YXYMyScene
+@implementation PlayFieldScene
 @synthesize bear;
 @synthesize bearWalkingFrames;
 -(id)initWithSize:(CGSize)size {    

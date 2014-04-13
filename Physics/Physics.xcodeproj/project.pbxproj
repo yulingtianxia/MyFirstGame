@@ -16,7 +16,7 @@
 		A4342E6E18F56EA800361B4F /* YXYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4342E6D18F56EA800361B4F /* YXYAppDelegate.m */; };
 		A4342E7118F56EA800361B4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4342E6F18F56EA800361B4F /* Main.storyboard */; };
 		A4342E7418F56EA800361B4F /* YXYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4342E7318F56EA800361B4F /* YXYViewController.m */; };
-		A4342E7718F56EA800361B4F /* YXYMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A4342E7618F56EA800361B4F /* YXYMyScene.m */; };
+		A4342E7718F56EA800361B4F /* PlayFieldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A4342E7618F56EA800361B4F /* PlayFieldScene.m */; };
 		A4342E7918F56EA800361B4F /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = A4342E7818F56EA800361B4F /* Spaceship.png */; };
 		A4342E7B18F56EA800361B4F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4342E7A18F56EA800361B4F /* Images.xcassets */; };
 		A4342E8218F56EA800361B4F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4342E8118F56EA800361B4F /* XCTest.framework */; };
@@ -53,8 +53,8 @@
 		A4342E7018F56EA800361B4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4342E7218F56EA800361B4F /* YXYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXYViewController.h; sourceTree = "<group>"; };
 		A4342E7318F56EA800361B4F /* YXYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXYViewController.m; sourceTree = "<group>"; };
-		A4342E7518F56EA800361B4F /* YXYMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXYMyScene.h; sourceTree = "<group>"; };
-		A4342E7618F56EA800361B4F /* YXYMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXYMyScene.m; sourceTree = "<group>"; };
+		A4342E7518F56EA800361B4F /* PlayFieldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayFieldScene.h; sourceTree = "<group>"; };
+		A4342E7618F56EA800361B4F /* PlayFieldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayFieldScene.m; sourceTree = "<group>"; };
 		A4342E7818F56EA800361B4F /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		A4342E7A18F56EA800361B4F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A4342E8018F56EA800361B4F /* PhysicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhysicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,8 +130,8 @@
 				A4342E6F18F56EA800361B4F /* Main.storyboard */,
 				A4342E7218F56EA800361B4F /* YXYViewController.h */,
 				A4342E7318F56EA800361B4F /* YXYViewController.m */,
-				A4342E7518F56EA800361B4F /* YXYMyScene.h */,
-				A4342E7618F56EA800361B4F /* YXYMyScene.m */,
+				A4342E7518F56EA800361B4F /* PlayFieldScene.h */,
+				A4342E7618F56EA800361B4F /* PlayFieldScene.m */,
 				A4EBAC7F18F69C07009784E7 /* MyFire.sks */,
 				A4EBAC8018F69C07009784E7 /* spark.png */,
 				A4342E7818F56EA800361B4F /* Spaceship.png */,
@@ -272,7 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4342E7418F56EA800361B4F /* YXYViewController.m in Sources */,
-				A4342E7718F56EA800361B4F /* YXYMyScene.m in Sources */,
+				A4342E7718F56EA800361B4F /* PlayFieldScene.m in Sources */,
 				A4342E6A18F56EA800361B4F /* main.m in Sources */,
 				A4342E6E18F56EA800361B4F /* YXYAppDelegate.m in Sources */,
 			);

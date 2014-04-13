@@ -16,7 +16,7 @@
 		A4B9032D18E308CB006658C6 /* YXYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B9032C18E308CB006658C6 /* YXYAppDelegate.m */; };
 		A4B9033018E308CB006658C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B9032E18E308CB006658C6 /* Main.storyboard */; };
 		A4B9033318E308CB006658C6 /* YXYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B9033218E308CB006658C6 /* YXYViewController.m */; };
-		A4B9033618E308CB006658C6 /* YXYMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B9033518E308CB006658C6 /* YXYMyScene.m */; };
+		A4B9033618E308CB006658C6 /* PlayFieldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B9033518E308CB006658C6 /* PlayFieldScene.m */; };
 		A4B9033818E308CB006658C6 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B9033718E308CB006658C6 /* Spaceship.png */; };
 		A4B9033A18E308CB006658C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B9033918E308CB006658C6 /* Images.xcassets */; };
 		A4B9034118E308CB006658C6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B9034018E308CB006658C6 /* XCTest.framework */; };
@@ -51,8 +51,8 @@
 		A4B9032F18E308CB006658C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4B9033118E308CB006658C6 /* YXYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXYViewController.h; sourceTree = "<group>"; };
 		A4B9033218E308CB006658C6 /* YXYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXYViewController.m; sourceTree = "<group>"; };
-		A4B9033418E308CB006658C6 /* YXYMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXYMyScene.h; sourceTree = "<group>"; };
-		A4B9033518E308CB006658C6 /* YXYMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXYMyScene.m; sourceTree = "<group>"; };
+		A4B9033418E308CB006658C6 /* PlayFieldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayFieldScene.h; sourceTree = "<group>"; };
+		A4B9033518E308CB006658C6 /* PlayFieldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayFieldScene.m; sourceTree = "<group>"; };
 		A4B9033718E308CB006658C6 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		A4B9033918E308CB006658C6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A4B9033F18E308CB006658C6 /* DragDropTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DragDropTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,8 +126,8 @@
 				A4B9032E18E308CB006658C6 /* Main.storyboard */,
 				A4B9033118E308CB006658C6 /* YXYViewController.h */,
 				A4B9033218E308CB006658C6 /* YXYViewController.m */,
-				A4B9033418E308CB006658C6 /* YXYMyScene.h */,
-				A4B9033518E308CB006658C6 /* YXYMyScene.m */,
+				A4B9033418E308CB006658C6 /* PlayFieldScene.h */,
+				A4B9033518E308CB006658C6 /* PlayFieldScene.m */,
 				A4B9033718E308CB006658C6 /* Spaceship.png */,
 				A4B9033918E308CB006658C6 /* Images.xcassets */,
 				A4B9032318E308CB006658C6 /* Supporting Files */,
@@ -264,7 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4B9033318E308CB006658C6 /* YXYViewController.m in Sources */,
-				A4B9033618E308CB006658C6 /* YXYMyScene.m in Sources */,
+				A4B9033618E308CB006658C6 /* PlayFieldScene.m in Sources */,
 				A4B9032918E308CB006658C6 /* main.m in Sources */,
 				A4B9032D18E308CB006658C6 /* YXYAppDelegate.m in Sources */,
 			);
@@ -473,6 +473,7 @@
 				A4B9035218E308CB006658C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4B9035318E308CB006658C6 /* Build configuration list for PBXNativeTarget "DragDropTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +482,7 @@
 				A4B9035518E308CB006658C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

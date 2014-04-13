@@ -10,8 +10,9 @@
 #import "Define.h"
 #import "NodeCategories.h"
 #import "RandomHelper.h"
-#import "YXYAtomNode.h"
-@interface YXYMyScene : SKScene <SKPhysicsContactDelegate>
-@property YXYAtomNode *touchedAtom;
+#import "AtomNode.h"
+#import "VisitablePhysicsBody.h"
+@interface PlayFieldScene : SKScene <SKPhysicsContactDelegate>
+@property AtomNode *touchedAtom;
 @property SKNode * debugOverlay; 
 @end

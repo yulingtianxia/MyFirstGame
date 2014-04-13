@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 杨萧玉. All rights reserved.
 //
 
-#import "YXYMyScene.h"
+#import "PlayFieldScene.h"
 
-@implementation YXYMyScene
+@implementation PlayFieldScene
 @synthesize touchedAtom;
 
 bool isPanningAtom = NO;
@@ -18,10 +18,12 @@ bool isAllAtomStatic = YES;
         /* Setup your scene here */
         self.debugOverlay = [SKNode node];
         [self addChild:self.debugOverlay];
-        
+        self.name = PlayFieldName;
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+        self.physicsBody.categoryBitMask = PlayFieldCategory;
         self.backgroundColor = [SKColor colorWithRed:1 green:1 blue:1 alpha:1.0];
         self.physicsWorld.gravity = CGVectorMake(0, 0);
+        self.physicsWorld.contactDelegate = self;
         [self makeAtom];
     }
     return self;
@@ -41,19 +43,7 @@ bool isAllAtomStatic = YES;
     }
     //add debug node
     [self addChild:self.debugOverlay];
-    // add code to create and add debugging images to the debug node.
-    SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    if (isPanningAtom) {
-        label.text = @"是";
-    }
-    else{
-        label.text = @"否";
-    }
-    label.fontSize = 40;
-    label.fontColor = [SKColor blackColor];
-    label.position = CGPointMake(self.size.width/2, self.size.height/2);
     
-//    [self.debugOverlay addChild: label];
 
 }
 -(void)update:(CFTimeInterval)currentTime {
@@ -79,7 +69,7 @@ bool isAllAtomStatic = YES;
 }
 -(void)makeAtom
 {
-    YXYAtomNode *Atom = [[YXYAtomNode alloc] init];
+    AtomNode *Atom = [[AtomNode alloc] init];
     Atom.position = CGPointMake(skRand(AtomRadius, self.size.width-AtomRadius),skRand(AtomRadius, self.size.height-AtomRadius));
     [self addChild:Atom];
 }
@@ -88,7 +78,7 @@ bool isAllAtomStatic = YES;
 	if (recognizer.state == UIGestureRecognizerStateBegan) {
         CGPoint touchLocation = [recognizer locationInView:recognizer.view];
         touchLocation = [self convertPointFromView:touchLocation];
-        YXYAtomNode *touchedNode = (YXYAtomNode *)[self nodeAtPoint:touchLocation];
+        AtomNode *touchedNode = (AtomNode *)[self nodeAtPoint:touchLocation];
         if (isAllAtomStatic&&[touchedNode.name isEqualToString:AtomName]) {
             touchedAtom = touchedNode;
             isPanningAtom = YES;
@@ -117,6 +107,14 @@ bool isAllAtomStatic = YES;
 #pragma mark SKPhysicsContactDelegate
 -(void)didBeginContact:(SKPhysicsContact *)contact
 {
+    //A->B
+    ContactVisitor *visitorA = [ContactVisitor contactVisitorWithBody:contact.bodyA forContact:contact];
+    VisitablePhysicsBody *visitableBodyB = [[VisitablePhysicsBody alloc] initWithBody:contact.bodyB];
+    [visitableBodyB acceptVisitor:visitorA];
+    //B->A
+    ContactVisitor *visitorB = [ContactVisitor contactVisitorWithBody:contact.bodyB forContact:contact];
+    VisitablePhysicsBody *visitableBodyA = [[VisitablePhysicsBody alloc] initWithBody:contact.bodyA];
+    [visitableBodyA acceptVisitor:visitorB];
     
 }
 @end

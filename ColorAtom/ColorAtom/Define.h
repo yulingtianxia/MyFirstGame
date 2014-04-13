@@ -11,6 +11,7 @@
 
 #define AtomRadius 30
 #define AtomName @"atom"
+#define PlayFieldName @"playfield"
 #define ZERO 0.3
 
 #endif

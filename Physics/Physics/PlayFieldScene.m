@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 杨萧玉. All rights reserved.
 //
 #define huntRadius 50
-#import "YXYMyScene.h"
+#import "PlayFieldScene.h"
 
-@implementation YXYMyScene
+@implementation PlayFieldScene
 @synthesize hunter;
 //@synthesize debugOverlay;
 -(id)initWithSize:(CGSize)size {

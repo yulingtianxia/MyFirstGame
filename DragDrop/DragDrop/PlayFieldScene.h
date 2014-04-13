@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 static NSString * const kAnimalNodeName = @"movable";
-@interface YXYMyScene : SKScene
+@interface PlayFieldScene : SKScene
 @property (nonatomic, strong) SKSpriteNode *background;
 @property (nonatomic, strong) SKSpriteNode *selectedNode;
 

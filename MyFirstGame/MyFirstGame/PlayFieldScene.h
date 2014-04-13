@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface YXYMyScene : SKScene <SKPhysicsContactDelegate>
+@interface PlayFieldScene : SKScene <SKPhysicsContactDelegate>
 @property (nonatomic) SKSpriteNode * player;
 @property (nonatomic) SKSpriteNode * background;
 @property (nonatomic) NSTimeInterval lastSpawnTimeInterval;

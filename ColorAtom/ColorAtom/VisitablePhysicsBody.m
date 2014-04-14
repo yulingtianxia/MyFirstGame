@@ -18,9 +18,9 @@
     return self;
 }
 
-- (void)acceptVisitor:(ContactVisitor *)contact
+- (void)acceptVisitor:(ContactVisitor *)visitor
 {
-    [contact visit:self.body];
+    [visitor visit:self.body];
 }
 
 @end

@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 #import "NodeCategories.h"
 #import "AtomNodeContactVisitor.h"
+#import "PlayFieldSceneContactVisitor.h"
 @implementation ContactVisitor
 
 + (id)contactVisitorWithBody:(SKPhysicsBody *)body forContact:(SKPhysicsContact *)contact
@@ -19,7 +20,7 @@
         return [[AtomNodeContactVisitor alloc] initWithBody:body forContact:contact];
     }
     if ((body.categoryBitMask&PlayFieldCategory)!=0) {
-        return [[AtomNodeContactVisitor alloc] initWithBody:body forContact:contact];
+        return [[PlayFieldSceneContactVisitor alloc] initWithBody:body forContact:contact];
     }
     else{
         return nil;
@@ -48,7 +49,7 @@
     [contactSelectorString appendString:@":"];
     
     SEL selector = NSSelectorFromString(contactSelectorString);
-    
+    //判断是否存在此方法
     if ([self respondsToSelector:selector]) {
         [self performSelector:selector withObject:body];
     }

@@ -12,6 +12,6 @@
 @property (nonatomic, readonly, strong) SKPhysicsBody *body;
 
 - (id) initWithBody:(SKPhysicsBody *)body;
-- (void) acceptVisitor:(ContactVisitor *)contact;
+- (void) acceptVisitor:(ContactVisitor *)visitor;
 
 @end

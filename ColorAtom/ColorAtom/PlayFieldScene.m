@@ -10,12 +10,14 @@
 
 @implementation PlayFieldScene
 @synthesize touchedAtom;
+@synthesize isAllAtomStatic;
+@synthesize isPanningAtom;
 
-bool isPanningAtom = NO;
-bool isAllAtomStatic = YES;
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
+        isPanningAtom=NO;
+        isAllAtomStatic=YES;
         self.debugOverlay = [SKNode node];
         [self addChild:self.debugOverlay];
         self.name = PlayFieldName;
@@ -115,6 +117,5 @@ bool isAllAtomStatic = YES;
     ContactVisitor *visitorB = [ContactVisitor contactVisitorWithBody:contact.bodyB forContact:contact];
     VisitablePhysicsBody *visitableBodyA = [[VisitablePhysicsBody alloc] initWithBody:contact.bodyA];
     [visitableBodyA acceptVisitor:visitorB];
-    
 }
 @end

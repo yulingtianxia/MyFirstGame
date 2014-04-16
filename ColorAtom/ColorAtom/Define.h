@@ -9,9 +9,11 @@
 #ifndef ColorAtom_Define_h
 #define ColorAtom_Define_h
 
+#define ZERO 0.5
 #define AtomRadius 30
+
 #define AtomName @"atom"
 #define PlayFieldName @"playfield"
-#define ZERO 0.3
+#define ATOMCOLOR @"atomcolor"
 
 #endif

@@ -14,5 +14,7 @@
 #import "VisitablePhysicsBody.h"
 @interface PlayFieldScene : SKScene <SKPhysicsContactDelegate>
 @property AtomNode *touchedAtom;
-@property SKNode * debugOverlay; 
+@property SKNode * debugOverlay;
+@property bool isPanningAtom;
+@property bool isAllAtomStatic;
 @end

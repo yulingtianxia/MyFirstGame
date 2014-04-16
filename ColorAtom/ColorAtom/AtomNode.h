@@ -11,5 +11,8 @@
 #import "RandomHelper.h"
 #import "NodeCategories.h"
 @interface AtomNode : SKSpriteNode
+@property UInt32 category;
 - (id)initWithName:(NSString *)name;
+-(void) changeColorWithAtom:(AtomNode *) atom;
+-(void) displayColor;
 @end

@@ -10,12 +10,18 @@
 #import "AtomNode.h"
 #import "PlayFieldScene.h"
 @implementation AtomNodeContactVisitor
+
+
+
 -(void) visitAtomNode:(SKPhysicsBody*) anotherAtomBody
 {
     AtomNode *thisAtom = (AtomNode*)self.body.node;
     AtomNode *anotherAtom = (AtomNode*)anotherAtomBody.node;
     //处理碰撞后的结果
-    NSLog(@"%@->%@",thisAtom.name,anotherAtom.name);
+//    NSLog(@"%@->%@",thisAtom.name,anotherAtom.name);
+    ((PlayFieldScene *)thisAtom.parent).isPanningAtom = NO;
+    [thisAtom changeColorWithAtom:anotherAtom];
+    
 }
 -(void) visitPlayFieldScene:(SKPhysicsBody*) playfieldBody
 {
@@ -23,4 +29,5 @@
     PlayFieldScene *playfield = (PlayFieldScene*) playfieldBody.node;
     NSLog(@"%@->%@",atom.name,playfield.name);
 }
+
 @end

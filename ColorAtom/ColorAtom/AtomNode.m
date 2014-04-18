@@ -7,46 +7,39 @@
 //
 
 #import "AtomNode.h"
-static const uint32_t Plus          =  0x1 << 0;
-static const uint32_t Zero          =  0x1 << 1;
-static const uint32_t Minus         =  0x1 << 2;
+
 @implementation AtomNode
--(id)init
+-(id)initWithName:(NSString *)name ImageName:(NSString *)imageName
 {
-    return [self initWithName:AtomName];
-}
--(id)initWithName:(NSString *)name
-{
-    CGFloat plusOrMinus = randAtom();
-    NSString *imageName;
-    if (plusOrMinus==1) {
-        imageName = @"Atomplus";
-        _category = Plus;
-    }
-    else if(plusOrMinus==-1){
-        imageName = @"Atomminus";
-        _category = Minus;
-    }
-    self = [super initWithTexture:[SKTexture textureWithImageNamed:imageName] color:[SKColor colorWithRed:skRandf() green:skRandf() blue:skRandf() alpha:1] size:CGSizeMake(AtomRadius*2, AtomRadius*2)];
+//    CGFloat plusOrMinus = randAtom();
+//    NSString *imageName;
+//    if (plusOrMinus==1) {
+//        imageName = @"Atomplus";
+//    }
+//    else if(plusOrMinus==-1){
+//        imageName = @"Atomminus";
+//    }
+    if(self = [super initWithTexture:[SKTexture textureWithImageNamed:imageName] color:[SKColor colorWithRed:skRandf() green:skRandf() blue:skRandf() alpha:1] size:CGSizeMake(AtomRadius*2, AtomRadius*2)]){
     self.colorBlendFactor = 1.0;
     self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:AtomRadius];
     self.physicsBody.dynamic = YES;
-    self.physicsBody.categoryBitMask = AtomCategory;
-    self.physicsBody.contactTestBitMask = AtomCategory|PlayFieldCategory;
+//    if (plusOrMinus==1) {
+//        self.physicsBody.categoryBitMask = AtomPlusCategory;
+//        
+//    }
+//    else if(plusOrMinus==-1){
+//        self.physicsBody.categoryBitMask = AtomMinusCategory;
+//    }
+    self.physicsBody.contactTestBitMask = AtomPlusCategory|AtomMinusCategory|PlayFieldCategory;
     self.physicsBody.linearDamping = 0.8;
     self.physicsBody.angularDamping = 0.8;
     self.userData = [NSMutableDictionary dictionaryWithDictionary:@{ATOMCOLOR:self.color}];
     self.name = AtomName;
+    }
     return self;
 }
 
--(void) displayColor{
-    [self runAction:[SKAction runBlock:^{
-        
-        self.color = [self.userData objectForKey:ATOMCOLOR];
-    }]];
-    
-}
+
 
 -(void) changeColorWithAtom:(AtomNode *) atom
 {
@@ -55,7 +48,7 @@ static const uint32_t Minus         =  0x1 << 2;
     CGFloat redtotal,greentotal,bluetotal,alphatotal;
     [[self.userData objectForKey:ATOMCOLOR] getRed:&red1 green:&green1 blue:&blue1 alpha:&alpha1];
     [[atom.userData objectForKey:ATOMCOLOR] getRed:&red2 green:&green2 blue:&blue2 alpha:&alpha2];
-    if ((_category&atom.category)!=0) {
+    if ((self.physicsBody.categoryBitMask&atom.physicsBody.categoryBitMask)!=0) {
         redtotal = (red1+red2)/2;
         greentotal = (green1+green2)/2;
         bluetotal = (blue1+blue2)/2;

@@ -26,7 +26,7 @@
         self.backgroundColor = [SKColor colorWithRed:1 green:1 blue:1 alpha:1.0];
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
-        [self makeAtom];
+        [self createAtom];
     }
     return self;
 }
@@ -41,7 +41,7 @@
     if (isPanningAtom==NO&&touchedAtom!=NULL&&
         isAllAtomStatic) {
         touchedAtom = NULL;
-        [self makeAtom];
+        [self createAtom];
     }
     //add debug node
     [self addChild:self.debugOverlay];
@@ -69,11 +69,21 @@
     }];
     
 }
--(void)makeAtom
+-(void)createAtom
 {
-    AtomNode *Atom = [[AtomNode alloc] init];
-    Atom.position = CGPointMake(skRand(AtomRadius, self.size.width-AtomRadius),skRand(AtomRadius, self.size.height-AtomRadius));
-    [self addChild:Atom];
+    CGFloat plusOrMinus = randAtom();
+    
+    if (plusOrMinus==1) {
+        AtomNode *Atom = [[AtomPlusNode alloc] init];
+        Atom.position = CGPointMake(skRand(AtomRadius, self.size.width-AtomRadius),skRand(AtomRadius, self.size.height-AtomRadius));
+        [self addChild:Atom];
+    }
+    else if(plusOrMinus==-1){
+        AtomNode *Atom = [[AtomMinusNode alloc] init];
+        Atom.position = CGPointMake(skRand(AtomRadius, self.size.width-AtomRadius),skRand(AtomRadius, self.size.height-AtomRadius));
+        [self addChild:Atom];
+    }
+    
 }
 
 - (void)handlePanFrom:(UIPanGestureRecognizer *)recognizer {

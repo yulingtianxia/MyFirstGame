@@ -26,8 +26,11 @@
 		A4E9E50C18F7D18E000ADEAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E9E4E718F7D18E000ADEAE /* UIKit.framework */; };
 		A4E9E51418F7D18E000ADEAE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4E9E51218F7D18E000ADEAE /* InfoPlist.strings */; };
 		A4E9E51618F7D18E000ADEAE /* ColorAtomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E9E51518F7D18E000ADEAE /* ColorAtomTests.m */; };
+		A4ED50481900FAD500A37085 /* AtomPlusNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ED50471900FAD500A37085 /* AtomPlusNode.m */; };
+		A4ED504B1900FFF200A37085 /* AtomMinusNodeContactVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ED504A1900FFF200A37085 /* AtomMinusNodeContactVisitor.m */; };
+		A4ED504E190103A600A37085 /* AtomMinusNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ED504D190103A600A37085 /* AtomMinusNode.m */; };
 		A4EE478818FA627C003A0B74 /* ContactVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EE478718FA627C003A0B74 /* ContactVisitor.m */; };
-		A4EE478B18FA6600003A0B74 /* AtomNodeContactVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EE478A18FA6600003A0B74 /* AtomNodeContactVisitor.m */; };
+		A4EE478B18FA6600003A0B74 /* AtomPlusNodeContactVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EE478A18FA6600003A0B74 /* AtomPlusNodeContactVisitor.m */; };
 		A4EE478E18FA6A0C003A0B74 /* VisitablePhysicsBody.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EE478D18FA6A0C003A0B74 /* VisitablePhysicsBody.m */; };
 		A4EE479118FA70B6003A0B74 /* PlayFieldSceneContactVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EE479018FA70B6003A0B74 /* PlayFieldSceneContactVisitor.m */; };
 /* End PBXBuildFile section */
@@ -73,10 +76,16 @@
 		A4E9E51318F7D18E000ADEAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4E9E51518F7D18E000ADEAE /* ColorAtomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorAtomTests.m; sourceTree = "<group>"; };
 		A4E9E52018F7E854000ADEAE /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		A4ED50461900FAD500A37085 /* AtomPlusNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtomPlusNode.h; sourceTree = "<group>"; };
+		A4ED50471900FAD500A37085 /* AtomPlusNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtomPlusNode.m; sourceTree = "<group>"; };
+		A4ED50491900FFF200A37085 /* AtomMinusNodeContactVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtomMinusNodeContactVisitor.h; sourceTree = "<group>"; };
+		A4ED504A1900FFF200A37085 /* AtomMinusNodeContactVisitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtomMinusNodeContactVisitor.m; sourceTree = "<group>"; };
+		A4ED504C190103A600A37085 /* AtomMinusNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtomMinusNode.h; sourceTree = "<group>"; };
+		A4ED504D190103A600A37085 /* AtomMinusNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtomMinusNode.m; sourceTree = "<group>"; };
 		A4EE478618FA627C003A0B74 /* ContactVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactVisitor.h; sourceTree = "<group>"; };
 		A4EE478718FA627C003A0B74 /* ContactVisitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactVisitor.m; sourceTree = "<group>"; };
-		A4EE478918FA6600003A0B74 /* AtomNodeContactVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtomNodeContactVisitor.h; sourceTree = "<group>"; };
-		A4EE478A18FA6600003A0B74 /* AtomNodeContactVisitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtomNodeContactVisitor.m; sourceTree = "<group>"; };
+		A4EE478918FA6600003A0B74 /* AtomPlusNodeContactVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtomPlusNodeContactVisitor.h; sourceTree = "<group>"; };
+		A4EE478A18FA6600003A0B74 /* AtomPlusNodeContactVisitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtomPlusNodeContactVisitor.m; sourceTree = "<group>"; };
 		A4EE478C18FA6A0C003A0B74 /* VisitablePhysicsBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisitablePhysicsBody.h; sourceTree = "<group>"; };
 		A4EE478D18FA6A0C003A0B74 /* VisitablePhysicsBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitablePhysicsBody.m; sourceTree = "<group>"; };
 		A4EE478F18FA70B6003A0B74 /* PlayFieldSceneContactVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayFieldSceneContactVisitor.h; sourceTree = "<group>"; };
@@ -113,6 +122,10 @@
 			children = (
 				A46E099218F90A6D00BCC91D /* AtomNode.h */,
 				A46E099318F90A6D00BCC91D /* AtomNode.m */,
+				A4ED50461900FAD500A37085 /* AtomPlusNode.h */,
+				A4ED50471900FAD500A37085 /* AtomPlusNode.m */,
+				A4ED504C190103A600A37085 /* AtomMinusNode.h */,
+				A4ED504D190103A600A37085 /* AtomMinusNode.m */,
 				A46E099518F9178D00BCC91D /* YXYDebugNode.h */,
 				A46E099618F9178D00BCC91D /* YXYDebugNode.m */,
 			);
@@ -224,8 +237,10 @@
 			children = (
 				A4EE478618FA627C003A0B74 /* ContactVisitor.h */,
 				A4EE478718FA627C003A0B74 /* ContactVisitor.m */,
-				A4EE478918FA6600003A0B74 /* AtomNodeContactVisitor.h */,
-				A4EE478A18FA6600003A0B74 /* AtomNodeContactVisitor.m */,
+				A4EE478918FA6600003A0B74 /* AtomPlusNodeContactVisitor.h */,
+				A4EE478A18FA6600003A0B74 /* AtomPlusNodeContactVisitor.m */,
+				A4ED50491900FFF200A37085 /* AtomMinusNodeContactVisitor.h */,
+				A4ED504A1900FFF200A37085 /* AtomMinusNodeContactVisitor.m */,
 				A4EE478F18FA70B6003A0B74 /* PlayFieldSceneContactVisitor.h */,
 				A4EE479018FA70B6003A0B74 /* PlayFieldSceneContactVisitor.m */,
 			);
@@ -334,12 +349,15 @@
 				A4E9E4FC18F7D18E000ADEAE /* YXYViewController.m in Sources */,
 				A4E9E4FF18F7D18E000ADEAE /* PlayFieldScene.m in Sources */,
 				A4E9E4F218F7D18E000ADEAE /* main.m in Sources */,
+				A4ED50481900FAD500A37085 /* AtomPlusNode.m in Sources */,
 				A4E9E4F618F7D18E000ADEAE /* YXYAppDelegate.m in Sources */,
 				A4EE478E18FA6A0C003A0B74 /* VisitablePhysicsBody.m in Sources */,
 				A4EE478818FA627C003A0B74 /* ContactVisitor.m in Sources */,
 				A46E099718F9178D00BCC91D /* YXYDebugNode.m in Sources */,
-				A4EE478B18FA6600003A0B74 /* AtomNodeContactVisitor.m in Sources */,
+				A4EE478B18FA6600003A0B74 /* AtomPlusNodeContactVisitor.m in Sources */,
+				A4ED504B1900FFF200A37085 /* AtomMinusNodeContactVisitor.m in Sources */,
 				A46E099418F90A6D00BCC91D /* AtomNode.m in Sources */,
+				A4ED504E190103A600A37085 /* AtomMinusNode.m in Sources */,
 				A4EE479118FA70B6003A0B74 /* PlayFieldSceneContactVisitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

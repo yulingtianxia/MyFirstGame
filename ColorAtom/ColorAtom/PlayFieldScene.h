@@ -11,6 +11,8 @@
 #import "NodeCategories.h"
 #import "RandomHelper.h"
 #import "AtomNode.h"
+#import "AtomPlusNode.h"
+#import "AtomMinusNode.h"
 #import "VisitablePhysicsBody.h"
 @interface PlayFieldScene : SKScene <SKPhysicsContactDelegate>
 @property AtomNode *touchedAtom;

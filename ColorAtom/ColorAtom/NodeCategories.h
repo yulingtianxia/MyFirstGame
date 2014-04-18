@@ -8,8 +8,9 @@
 
 #ifndef ColorAtom_NodeCategories_h
 #define ColorAtom_NodeCategories_h
-static const uint32_t AtomCategory          =  0x1 << 0;
-static const uint32_t PlayFieldCategory     =  0x1 << 1;
+static const uint32_t AtomPlusCategory      =  0x1 << 0;
+static const uint32_t AtomMinusCategory     =  0x1 << 1;
+static const uint32_t PlayFieldCategory     =  0x1 << 2;
 
 
 #endif

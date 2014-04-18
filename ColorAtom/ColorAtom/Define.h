@@ -13,6 +13,8 @@
 #define AtomRadius 30
 
 #define AtomName @"atom"
+#define AtomPlusName @"atomplus"
+#define AtomMinusName @"atomminus"
 #define PlayFieldName @"playfield"
 #define ATOMCOLOR @"atomcolor"
 

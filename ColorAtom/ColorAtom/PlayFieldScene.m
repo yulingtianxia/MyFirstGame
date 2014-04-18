@@ -9,110 +9,143 @@
 #import "PlayFieldScene.h"
 
 @implementation PlayFieldScene
-@synthesize touchedAtom;
-@synthesize isAllAtomStatic;
-@synthesize isPanningAtom;
 
+@synthesize debugOverlay;
+@synthesize longPressPosition;
+@synthesize panPosition;
+@synthesize playArea;
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
-        isPanningAtom=NO;
-        isAllAtomStatic=YES;
-        self.debugOverlay = [SKNode node];
-        [self addChild:self.debugOverlay];
+        debugOverlay = [[YXYDebugNode alloc] init];
+        debugOverlay.position = CGPointMake(self.size.width/2, self.size.height/2);
+        [self addChild:debugOverlay];
+        playArea = [[PlayerArea alloc] init];
+        [self addChild:playArea];
+        [playArea beginWork];
         self.name = PlayFieldName;
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         self.physicsBody.categoryBitMask = PlayFieldCategory;
         self.backgroundColor = [SKColor colorWithRed:1 green:1 blue:1 alpha:1.0];
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
-        [self createAtom];
+
+        [self createAtomMinus];
     }
     return self;
 }
 -(void)didMoveToView:(SKView *)view
 {
-    UIPanGestureRecognizer *gesturerecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanFrom:)];
-    [[self view] addGestureRecognizer:gesturerecognizer];
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanFrom:)];
+    [[self view] addGestureRecognizer:pan];
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressFrom:)];
+    [[self view] addGestureRecognizer:longPress];
+    
 }
 -(void)didSimulatePhysics
 {
-    [self CheckAtomsStatic];
-    if (isPanningAtom==NO&&touchedAtom!=NULL&&
-        isAllAtomStatic) {
-        touchedAtom = NULL;
-        [self createAtom];
-    }
-    //add debug node
-    [self addChild:self.debugOverlay];
+    [self enumerateChildNodesWithName:AtomMinusName usingBlock:^(SKNode *node, BOOL *stop) {
+        if (node.position.y<3*AtomRadius) {
+            SKTransition *reveal = [SKTransition flipHorizontalWithDuration:0.5];
+            SKScene * gameOverScene = [[GameOverScene alloc] initWithSize:self.size won:NO];
+            [self.view presentScene:gameOverScene transition: reveal];
+            *stop=YES;
+            [node removeFromParent];
+        }
+        
+    }];
     
+    //add debug node
+    [self addChild:debugOverlay];
 
 }
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-    [self.debugOverlay removeFromParent];
-    [self.debugOverlay removeAllChildren];
+
+    //添加debug信息
+    [debugOverlay removeFromParent];
+//    [debugOverlay removeAllChildren];
 }
 #pragma mark MyMethod
--(void)CheckAtomsStatic
+
+-(void)createAtomPlusAtPosition:(CGPoint) position
 {
-    isAllAtomStatic = YES;
-    [self enumerateChildNodesWithName:AtomName usingBlock:^(SKNode *node, BOOL *stop) {
-        SKSpriteNode *atom = (SKSpriteNode *)node;
-        if (fabs(atom.physicsBody.velocity.dx)<=ZERO&&fabs(atom.physicsBody.velocity.dy)<=ZERO) {
-            atom.physicsBody.velocity = CGVectorMake(0, 0);
-        }
-        if (atom.physicsBody.velocity.dx!=0||atom.physicsBody.velocity.dy!=0) {
-            isAllAtomStatic = NO;
-            *stop = YES;
-        }
-    }];
-    
-}
--(void)createAtom
-{
-    CGFloat plusOrMinus = randAtom();
-    
-    if (plusOrMinus==1) {
-        AtomNode *Atom = [[AtomPlusNode alloc] init];
-        Atom.position = CGPointMake(skRand(AtomRadius, self.size.width-AtomRadius),skRand(AtomRadius, self.size.height-AtomRadius));
-        [self addChild:Atom];
-    }
-    else if(plusOrMinus==-1){
-        AtomNode *Atom = [[AtomMinusNode alloc] init];
-        Atom.position = CGPointMake(skRand(AtomRadius, self.size.width-AtomRadius),skRand(AtomRadius, self.size.height-AtomRadius));
-        [self addChild:Atom];
-    }
-    
+    AtomNode *Atom = [[AtomPlusNode alloc] init];
+    Atom.position = CGPointMake(position.x,AtomRadius);
+    playArea.fillColor = Atom.color;
+    playArea.strokeColor = Atom.color;
+    [self addChild:Atom];
+    [self runAction:[SKAction playSoundFileNamed:@"pew-pew-lei.caf" waitForCompletion:NO]];
 }
 
-- (void)handlePanFrom:(UIPanGestureRecognizer *)recognizer {
-	if (recognizer.state == UIGestureRecognizerStateBegan) {
+-(void)createAtomMinus{
+    [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{
+        AtomNode *Atom = [[AtomMinusNode alloc] init];
+        Atom.position = CGPointMake(skRand(AtomRadius, self.size.width-AtomRadius),self.size.height-AtomRadius);
+        
+        [self addChild:Atom];
+    }],
+                                                                       [SKAction waitForDuration:AtomMinusCreateInterval withRange:0.5]]]]];
+    
+    
+}
+-(void)handlePanFrom:(UILongPressGestureRecognizer *)recognizer{
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        //        debugOverlay.label.text = @"Began";
         CGPoint touchLocation = [recognizer locationInView:recognizer.view];
         touchLocation = [self convertPointFromView:touchLocation];
-        AtomNode *touchedNode = (AtomNode *)[self nodeAtPoint:touchLocation];
-        if (isAllAtomStatic&&[touchedNode.name isEqualToString:AtomName]) {
-            touchedAtom = touchedNode;
-            isPanningAtom = YES;
-        }
+        panPosition = touchLocation;
+        SKAction *createAtomPlusAction = [SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{
+            [self createAtomPlusAtPosition:panPosition];
+        }],
+                                                                                            [SKAction waitForDuration:AtomPlusCreateInterval]]]];
         
+        [self runAction:createAtomPlusAction withKey:CreateAtomPlus];
         
-    } else if (recognizer.state == UIGestureRecognizerStateChanged) {
+    }
+    else if (recognizer.state == UIGestureRecognizerStateChanged){
+        //        debugOverlay.label.text = @"Changed";
+        CGPoint touchLocation = [recognizer locationInView:recognizer.view];
+        touchLocation = [self convertPointFromView:touchLocation];
+        panPosition = touchLocation;
         
-        CGPoint translation = [recognizer translationInView:recognizer.view];
-        translation = CGPointMake(translation.x, -translation.y);
-        if (isPanningAtom==YES) {
-            touchedAtom.position = CGPointMake(touchedAtom.position.x+translation.x, touchedAtom.position.y+translation.y);
-        }
-        [recognizer setTranslation:CGPointZero inView:recognizer.view];
+    }
+    else if (recognizer.state == UIGestureRecognizerStateEnded){
+        //        debugOverlay.label.text = @"Ended";
+        [self removeActionForKey:CreateAtomPlus];
+    }
+    else{
+        //        debugOverlay.label.text = @"No";
+    }
+}
+
+-(void)handleLongPressFrom:(UILongPressGestureRecognizer *)recognizer{
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+//        debugOverlay.label.text = @"Began";
+        CGPoint touchLocation = [recognizer locationInView:recognizer.view];
+        touchLocation = [self convertPointFromView:touchLocation];
+        longPressPosition = touchLocation;
+        SKAction *createAtomPlusAction = [SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{
+            [self createAtomPlusAtPosition:longPressPosition];
+        }],
+                                                                                           [SKAction waitForDuration:AtomPlusCreateInterval]]]];
         
-    } else if (recognizer.state == UIGestureRecognizerStateEnded) {
+        [self runAction:createAtomPlusAction withKey:CreateAtomPlus];
         
-        if (isPanningAtom==YES) {
-            CGPoint velocity = [recognizer velocityInView:recognizer.view];
-            touchedAtom.physicsBody.velocity =CGVectorMake(velocity.x, -velocity.y);
-            isPanningAtom = NO;
-        }
+    }
+    else if (recognizer.state == UIGestureRecognizerStateChanged){
+//        debugOverlay.label.text = @"Changed";
+        CGPoint touchLocation = [recognizer locationInView:recognizer.view];
+        touchLocation = [self convertPointFromView:touchLocation];
+        longPressPosition = touchLocation;
+        
+    }
+    else if (recognizer.state == UIGestureRecognizerStateEnded){
+//        debugOverlay.label.text = @"Ended";
+        [self removeActionForKey:CreateAtomPlus];
+    }
+    else{
+//        debugOverlay.label.text = @"No";
     }
 }
 

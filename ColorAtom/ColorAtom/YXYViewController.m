@@ -9,16 +9,17 @@
 #import "YXYViewController.h"
 #import "PlayFieldScene.h"
 
-@implementation YXYViewController
 
+@implementation YXYViewController
+@synthesize backgroundMusicPlayer;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+//    skView.showsFPS = YES;
+//    skView.showsNodeCount = YES;
     
     // Create and configure the scene.
     SKScene * scene = [PlayFieldScene sceneWithSize:skView.bounds.size];
@@ -26,6 +27,12 @@
     
     // Present the scene.
     [skView presentScene:scene];
+    NSError *error;
+    NSURL * backgroundMusicURL = [[NSBundle mainBundle] URLForResource:@"background-music-aac" withExtension:@"caf"];
+    self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+    self.backgroundMusicPlayer.numberOfLoops = -1;
+    [self.backgroundMusicPlayer prepareToPlay];
+    [self.backgroundMusicPlayer play];
 }
 
 - (BOOL)shouldAutorotate

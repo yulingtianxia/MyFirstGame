@@ -16,8 +16,7 @@
     AtomNode *anotherAtom = (AtomNode*)anotherAtomBody.node;
     //处理碰撞后的结果
     //    NSLog(@"%@->%@",thisAtom.name,anotherAtom.name);
-    ((PlayFieldScene *)thisAtom.parent).isPanningAtom = NO;
-    [thisAtom changeColorWithAtom:anotherAtom];
+    [thisAtom changeColorWithDiffAtom:anotherAtom];
     
 }
 
@@ -27,9 +26,9 @@
     AtomNode *anotherAtom = (AtomNode*)anotherAtomBody.node;
     //处理碰撞后的结果
     //    NSLog(@"%@->%@",thisAtom.name,anotherAtom.name);
-    ((PlayFieldScene *)thisAtom.parent).isPanningAtom = NO;
-    [thisAtom changeColorWithAtom:anotherAtom];
-    
+    [thisAtom changeColorWithSameAtom:anotherAtom];
+    SKPhysicsJointFixed *fix = [SKPhysicsJointFixed jointWithBodyA:self.body bodyB:anotherAtomBody anchor:self.contact.contactPoint];
+    [self.body.node.scene.physicsWorld addJoint:fix];
 }
 
 -(void) visitPlayFieldScene:(SKPhysicsBody*) playfieldBody

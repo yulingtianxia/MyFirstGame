@@ -11,8 +11,9 @@
 @implementation AtomMinusNode
 -(id)init
 {
-    if (self = [super initWithName:AtomPlusName ImageName:@"Atomminus"]) {
+    if (self = [super initWithName:AtomMinusName ImageName:@"Atomminus"]) {
         self.physicsBody.categoryBitMask = AtomMinusCategory;
+        self.physicsBody.velocity = CGVectorMake(skRand(-100, 100), -skRand(300, 500));
     }
     return self;
 }

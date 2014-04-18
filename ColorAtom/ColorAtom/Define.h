@@ -18,4 +18,14 @@
 #define PlayFieldName @"playfield"
 #define ATOMCOLOR @"atomcolor"
 
+#define AtomPlusVx 0
+#define AtomPlusVy 1000
+#define AtomMinusVx 100
+#define AtomMinusVy -1000
+
+#define AtomPlusCreateInterval 0.5
+#define AtomMinusCreateInterval 1
+
+#define CreateAtomPlus @"createatomplus"
+
 #endif

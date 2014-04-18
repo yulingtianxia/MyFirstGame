@@ -14,9 +14,13 @@
 #import "AtomPlusNode.h"
 #import "AtomMinusNode.h"
 #import "VisitablePhysicsBody.h"
+#import "YXYDebugNode.h"
+#import "PlayerArea.h"
+#import "GameOverScene.h"
 @interface PlayFieldScene : SKScene <SKPhysicsContactDelegate>
-@property AtomNode *touchedAtom;
-@property SKNode * debugOverlay;
-@property bool isPanningAtom;
-@property bool isAllAtomStatic;
+
+@property YXYDebugNode* debugOverlay;
+@property CGPoint longPressPosition;
+@property CGPoint panPosition;
+@property PlayerArea *playArea;
 @end

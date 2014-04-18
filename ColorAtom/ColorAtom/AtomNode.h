@@ -12,5 +12,6 @@
 #import "NodeCategories.h"
 @interface AtomNode : SKSpriteNode
 - (id)initWithName:(NSString *)name ImageName:(NSString *)imageName;
--(void) changeColorWithAtom:(AtomNode *) atom;
+-(void) changeColorWithSameAtom:(AtomNode *) atom;
+-(void) changeColorWithDiffAtom:(AtomNode *) atom;
 @end

@@ -13,6 +13,7 @@
 {
     if (self = [super initWithName:AtomPlusName ImageName:@"Atomplus"]) {
         self.physicsBody.categoryBitMask  = AtomPlusCategory;
+        self.physicsBody.velocity = CGVectorMake(AtomPlusVx, AtomPlusVy);
     }
     return self;
 }

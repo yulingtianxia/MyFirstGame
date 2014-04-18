@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 杨萧玉. All rights reserved.
 //
 
-#import "YXYGameOverScene.h"
+#import "GameOverScene.h"
 #import "PlayFieldScene.h"
-@implementation YXYGameOverScene
+@implementation GameOverScene
 -(id)initWithSize:(CGSize)size won:(BOOL)won {
     if (self = [super initWithSize:size]) {
         

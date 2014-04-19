@@ -20,6 +20,7 @@
     //处理碰撞后的结果
 //    NSLog(@"%@->%@",thisAtom.name,anotherAtom.name);
 
+    thisAtom.fire.particleBirthRate = 0;
     [thisAtom changeColorWithSameAtom:anotherAtom];
     SKPhysicsJointFixed *fix = [SKPhysicsJointFixed jointWithBodyA:self.body bodyB:anotherAtomBody anchor:self.contact.contactPoint];
     [self.body.node.scene.physicsWorld addJoint:fix];
@@ -31,7 +32,11 @@
     AtomNode *anotherAtom = (AtomNode*)anotherAtomBody.node;
     //处理碰撞后的结果
     //    NSLog(@"%@->%@",thisAtom.name,anotherAtom.name);
-
+    Spark *spark = [[Spark alloc] initWithPosition:self.contact.contactPoint];
+    [spark runAction:[SKAction sequence:@[[SKAction waitForDuration:0.1],
+                                          [SKAction removeFromParent]]]];
+    [thisAtom.scene addChild:spark];
+    thisAtom.fire.particleBirthRate = 0;
     [thisAtom changeColorWithDiffAtom:anotherAtom];
     
 }
@@ -40,7 +45,8 @@
 {
     AtomNode *atom = (AtomNode*)self.body.node;
     PlayFieldScene *playfield = (PlayFieldScene*) playfieldBody.node;
-    NSLog(@"%@->%@",atom.name,playfield.name);
+//    NSLog(@"%@->%@",atom.name,playfield.name);
+    atom.fire.particleBirthRate = 0;
 }
 
 @end

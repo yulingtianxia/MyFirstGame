@@ -10,7 +10,9 @@
 #import "Define.h"
 #import "RandomHelper.h"
 #import "NodeCategories.h"
+#import "Spark.h"
 @interface AtomNode : SKSpriteNode
+@property SKEmitterNode *fire;
 - (id)initWithName:(NSString *)name ImageName:(NSString *)imageName;
 -(void) changeColorWithSameAtom:(AtomNode *) atom;
 -(void) changeColorWithDiffAtom:(AtomNode *) atom;

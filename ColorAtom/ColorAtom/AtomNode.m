@@ -9,17 +9,22 @@
 #import "AtomNode.h"
 
 @implementation AtomNode
+@synthesize fire;
 -(id)initWithName:(NSString *)name ImageName:(NSString *)imageName
 {
     if(self = [super initWithTexture:[SKTexture textureWithImageNamed:imageName] color:[SKColor colorWithRed:skRandf() green:skRandf() blue:skRandf() alpha:1] size:CGSizeMake(AtomRadius*2, AtomRadius*2)]){
-    self.colorBlendFactor = 1.0;
-    self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:AtomRadius];
-    self.physicsBody.dynamic = YES;
-    self.physicsBody.contactTestBitMask = AtomPlusCategory|AtomMinusCategory|PlayFieldCategory;
-    self.physicsBody.linearDamping = 0.8;
-    self.physicsBody.angularDamping = 0.8;
-    self.userData = [NSMutableDictionary dictionaryWithDictionary:@{ATOMCOLOR:self.color}];
-    self.name = name;
+        self.colorBlendFactor = 1.0;
+        self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:AtomRadius];
+        self.physicsBody.dynamic = YES;
+        self.physicsBody.contactTestBitMask = AtomPlusCategory|AtomMinusCategory|PlayFieldCategory;
+        self.physicsBody.linearDamping = 0.8;
+        self.physicsBody.angularDamping = 0.8;
+        self.userData = [NSMutableDictionary dictionaryWithDictionary:@{ATOMCOLOR:self.color}];
+        self.name = name;
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"Fire" ofType:@"sks"];
+        fire = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        fire.particleColor = self.color;
+        [self addChild:fire];
     }
     return self;
 }
@@ -46,10 +51,12 @@
     
 }
 -(void) changeColorWithDiffAtom:(AtomNode *) atom{
+    
     [self runAction:[SKAction sequence:@[[SKAction runBlock:^{
         self.physicsBody.collisionBitMask = 0;
         self.physicsBody.contactTestBitMask = 0;
         self.physicsBody.velocity = CGVectorMake(0, 0);
+        self.physicsBody = NULL;
     }],
                                          [SKAction colorizeWithColor:[UIColor clearColor] colorBlendFactor:1 duration:0.5],
                                          [SKAction runBlock:^{

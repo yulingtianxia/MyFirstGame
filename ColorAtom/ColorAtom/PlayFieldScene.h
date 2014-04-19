@@ -17,10 +17,12 @@
 #import "YXYDebugNode.h"
 #import "PlayerArea.h"
 #import "GameOverScene.h"
+#import "Background.h"
 @interface PlayFieldScene : SKScene <SKPhysicsContactDelegate>
 
 @property YXYDebugNode* debugOverlay;
 @property CGPoint longPressPosition;
 @property CGPoint panPosition;
 @property PlayerArea *playArea;
+@property Background *background;
 @end

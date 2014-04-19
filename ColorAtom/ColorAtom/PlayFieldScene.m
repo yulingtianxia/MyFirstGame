@@ -14,6 +14,7 @@
 @synthesize longPressPosition;
 @synthesize panPosition;
 @synthesize playArea;
+@synthesize background;
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
@@ -23,10 +24,19 @@
         playArea = [[PlayerArea alloc] init];
         [self addChild:playArea];
         [playArea beginWork];
+        background = [[Background alloc] init];
+        background.position = CGPointMake(self.size.width/2, self.size.height/2+AtomRadius);
+        [self addChild:background];
         self.name = PlayFieldName;
-        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathMoveToPoint(path, 0, 0, self.size.height);
+        CGPathAddLineToPoint(path, 0, 0, 0);
+        CGPathAddLineToPoint(path, 0, self.size.width, 0);
+        CGPathAddLineToPoint(path, 0, self.size.width, self.size.height);
+        self.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:path];
+//        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         self.physicsBody.categoryBitMask = PlayFieldCategory;
-        self.backgroundColor = [SKColor colorWithRed:1 green:1 blue:1 alpha:1.0];
+        self.backgroundColor = [SKColor clearColor];
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
 

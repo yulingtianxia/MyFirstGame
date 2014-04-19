@@ -24,6 +24,7 @@
         NSString *path = [[NSBundle mainBundle] pathForResource:@"Fire" ofType:@"sks"];
         fire = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
         fire.particleColor = self.color;
+        fire.position = CGPointMake(0, AtomRadius);
         [self addChild:fire];
     }
     return self;

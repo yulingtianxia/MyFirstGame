@@ -11,7 +11,7 @@
 @implementation AtomMinusNode
 -(id)init
 {
-    if (self = [super initWithName:AtomMinusName ImageName:@"Atomminus"]) {
+    if (self = [super initWithName:(NSString*)AtomMinusName ImageName:@"Atomminus"]) {
         self.physicsBody.categoryBitMask = AtomMinusCategory;
         self.physicsBody.velocity = CGVectorMake(skRand(-100, 100), -skRand(300, 500));
 //        self.fire.position = CGPointMake(0, AtomRadius*2);

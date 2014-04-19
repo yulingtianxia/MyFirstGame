@@ -15,31 +15,39 @@
 @synthesize panPosition;
 @synthesize playArea;
 @synthesize background;
+@synthesize displayScreen;
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
+        //添加debug信息
         debugOverlay = [[YXYDebugNode alloc] init];
         debugOverlay.position = CGPointMake(self.size.width/2, self.size.height/2);
         [self addChild:debugOverlay];
+//        添加记分显示屏
+        displayScreen = [[DisplayScreen alloc] init];
+        [self addChild:displayScreen];
+        [displayScreen setPosition];
+//        添加玩家胜负区域
         playArea = [[PlayerArea alloc] init];
         [self addChild:playArea];
         [playArea beginWork];
+//        添加游戏背景
         background = [[Background alloc] init];
         background.position = CGPointMake(self.size.width/2, self.size.height/2+AtomRadius);
         [self addChild:background];
-        self.name = PlayFieldName;
+//        游戏区域场景设置
+        self.name = (NSString*)PlayFieldName;
         CGMutablePathRef path = CGPathCreateMutable();
         CGPathMoveToPoint(path, 0, 0, self.size.height);
         CGPathAddLineToPoint(path, 0, 0, 0);
         CGPathAddLineToPoint(path, 0, self.size.width, 0);
         CGPathAddLineToPoint(path, 0, self.size.width, self.size.height);
         self.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:path];
-//        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         self.physicsBody.categoryBitMask = PlayFieldCategory;
         self.backgroundColor = [SKColor clearColor];
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
-
+//          产生负离子
         [self createAtomMinus];
     }
     return self;
@@ -54,7 +62,7 @@
 }
 -(void)didSimulatePhysics
 {
-    [self enumerateChildNodesWithName:AtomMinusName usingBlock:^(SKNode *node, BOOL *stop) {
+    [self enumerateChildNodesWithName:(NSString*)AtomMinusName usingBlock:^(SKNode *node, BOOL *stop) {
         if (node.position.y<3*AtomRadius) {
             SKTransition *reveal = [SKTransition flipHorizontalWithDuration:0.5];
             SKScene * gameOverScene = [[GameOverScene alloc] initWithSize:self.size won:NO];
@@ -80,12 +88,17 @@
 
 -(void)createAtomPlusAtPosition:(CGPoint) position
 {
-    AtomNode *Atom = [[AtomPlusNode alloc] init];
-    Atom.position = CGPointMake(position.x,AtomRadius);
-    playArea.fillColor = Atom.color;
-    playArea.strokeColor = Atom.color;
-    [self addChild:Atom];
-    [self runAction:[SKAction playSoundFileNamed:@"pew-pew-lei.caf" waitForCompletion:NO]];
+    if (displayScreen.atomCount>0) {
+        [displayScreen AtomPlusUsed];
+        AtomNode *Atom = [[AtomPlusNode alloc] init];
+        Atom.position = CGPointMake(position.x,AtomRadius);
+        playArea.fillColor = Atom.color;
+        playArea.strokeColor = Atom.color;
+        [self addChild:Atom];
+        [self runAction:[SKAction playSoundFileNamed:@"pew-pew-lei.caf" waitForCompletion:NO]];
+        
+    }
+    
 }
 
 -(void)createAtomMinus{
@@ -110,7 +123,7 @@
         }],
                                                                                             [SKAction waitForDuration:AtomPlusCreateInterval]]]];
         
-        [self runAction:createAtomPlusAction withKey:CreateAtomPlus];
+        [self runAction:createAtomPlusAction withKey:(NSString*)CreateAtomPlus];
         
     }
     else if (recognizer.state == UIGestureRecognizerStateChanged){
@@ -122,7 +135,7 @@
     }
     else if (recognizer.state == UIGestureRecognizerStateEnded){
         //        debugOverlay.label.text = @"Ended";
-        [self removeActionForKey:CreateAtomPlus];
+        [self removeActionForKey:(NSString*)CreateAtomPlus];
     }
     else{
         //        debugOverlay.label.text = @"No";
@@ -140,7 +153,7 @@
         }],
                                                                                            [SKAction waitForDuration:AtomPlusCreateInterval]]]];
         
-        [self runAction:createAtomPlusAction withKey:CreateAtomPlus];
+        [self runAction:createAtomPlusAction withKey:(NSString*)CreateAtomPlus];
         
     }
     else if (recognizer.state == UIGestureRecognizerStateChanged){
@@ -152,7 +165,7 @@
     }
     else if (recognizer.state == UIGestureRecognizerStateEnded){
 //        debugOverlay.label.text = @"Ended";
-        [self removeActionForKey:CreateAtomPlus];
+        [self removeActionForKey:(NSString*)CreateAtomPlus];
     }
     else{
 //        debugOverlay.label.text = @"No";

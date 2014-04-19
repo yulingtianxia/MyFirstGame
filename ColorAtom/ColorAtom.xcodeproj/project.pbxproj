@@ -34,6 +34,7 @@
 		A4EB2D6C190241ED00B28405 /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = A4EB2D6B190241ED00B28405 /* Fire.sks */; };
 		A4EB2D6E19024CA000B28405 /* Spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = A4EB2D6D19024CA000B28405 /* Spark.sks */; };
 		A4EB2D7119024DEA00B28405 /* Spark.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EB2D7019024DEA00B28405 /* Spark.m */; };
+		A4EB2D74190272EC00B28405 /* DisplayScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EB2D73190272EC00B28405 /* DisplayScreen.m */; };
 		A4ED50481900FAD500A37085 /* AtomPlusNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ED50471900FAD500A37085 /* AtomPlusNode.m */; };
 		A4ED504B1900FFF200A37085 /* AtomMinusNodeContactVisitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ED504A1900FFF200A37085 /* AtomMinusNodeContactVisitor.m */; };
 		A4ED504E190103A600A37085 /* AtomMinusNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ED504D190103A600A37085 /* AtomMinusNode.m */; };
@@ -98,6 +99,8 @@
 		A4EB2D6D19024CA000B28405 /* Spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Spark.sks; sourceTree = "<group>"; };
 		A4EB2D6F19024DEA00B28405 /* Spark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spark.h; sourceTree = "<group>"; };
 		A4EB2D7019024DEA00B28405 /* Spark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spark.m; sourceTree = "<group>"; };
+		A4EB2D72190272EC00B28405 /* DisplayScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayScreen.h; sourceTree = "<group>"; };
+		A4EB2D73190272EC00B28405 /* DisplayScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayScreen.m; sourceTree = "<group>"; };
 		A4ED50461900FAD500A37085 /* AtomPlusNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtomPlusNode.h; sourceTree = "<group>"; };
 		A4ED50471900FAD500A37085 /* AtomPlusNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtomPlusNode.m; sourceTree = "<group>"; };
 		A4ED50491900FFF200A37085 /* AtomMinusNodeContactVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtomMinusNodeContactVisitor.h; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				A4EB2D631902377300B28405 /* Background.m */,
 				A4EB2D6F19024DEA00B28405 /* Spark.h */,
 				A4EB2D7019024DEA00B28405 /* Spark.m */,
+				A4EB2D72190272EC00B28405 /* DisplayScreen.h */,
+				A4EB2D73190272EC00B28405 /* DisplayScreen.m */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -201,11 +206,11 @@
 			isa = PBXGroup;
 			children = (
 				A4EB2D4F1902279600B28405 /* Emitter */,
-				A4ED505519016AF200A37085 /* Sounds */,
 				A4EE478518FA6217003A0B74 /* Visitors */,
 				A46E099118F909C700BCC91D /* Nodes */,
 				A4E9E52118F7E85C000ADEAE /* Scene */,
 				A4E9E51F18F7E82F000ADEAE /* Util */,
+				A4ED505519016AF200A37085 /* Sounds */,
 				A4E9E4F418F7D18E000ADEAE /* YXYAppDelegate.h */,
 				A4E9E4F518F7D18E000ADEAE /* YXYAppDelegate.m */,
 				A4E9E4F718F7D18E000ADEAE /* Main.storyboard */,
@@ -424,6 +429,7 @@
 				A4EB2D641902377300B28405 /* Background.m in Sources */,
 				A4EB2D7119024DEA00B28405 /* Spark.m in Sources */,
 				A4EE478818FA627C003A0B74 /* ContactVisitor.m in Sources */,
+				A4EB2D74190272EC00B28405 /* DisplayScreen.m in Sources */,
 				A46E099718F9178D00BCC91D /* YXYDebugNode.m in Sources */,
 				A4EE478B18FA6600003A0B74 /* AtomPlusNodeContactVisitor.m in Sources */,
 				A4ED504B1900FFF200A37085 /* AtomMinusNodeContactVisitor.m in Sources */,

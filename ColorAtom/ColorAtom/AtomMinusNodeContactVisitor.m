@@ -16,6 +16,7 @@
     AtomNode *anotherAtom = (AtomNode*)anotherAtomBody.node;
     //处理碰撞后的结果
     //    NSLog(@"%@->%@",thisAtom.name,anotherAtom.name);
+    [((DisplayScreen *)[thisAtom.scene childNodeWithName:(NSString *)DisplayScreenName]) AtomMinusKilled];
     thisAtom.fire.particleBirthRate = 0;
     [thisAtom changeColorWithDiffAtom:anotherAtom];
     
@@ -32,7 +33,6 @@
     [thisAtom changeColorWithSameAtom:anotherAtom];
     SKPhysicsJointFixed *fix = [SKPhysicsJointFixed jointWithBodyA:self.body bodyB:anotherAtomBody anchor:self.contact.contactPoint];
     [self.body.node.scene.physicsWorld addJoint:fix];
-    
 }
 
 -(void) visitPlayFieldScene:(SKPhysicsBody*) playfieldBody

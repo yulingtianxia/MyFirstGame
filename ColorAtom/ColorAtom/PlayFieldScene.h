@@ -18,6 +18,7 @@
 #import "PlayerArea.h"
 #import "GameOverScene.h"
 #import "Background.h"
+#import "DisplayScreen.h"
 @interface PlayFieldScene : SKScene <SKPhysicsContactDelegate>
 
 @property YXYDebugNode* debugOverlay;
@@ -25,4 +26,5 @@
 @property CGPoint panPosition;
 @property PlayerArea *playArea;
 @property Background *background;
+@property DisplayScreen *displayScreen;
 @end

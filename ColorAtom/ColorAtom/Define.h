@@ -16,6 +16,8 @@ static NSString const *AtomName = @"atom";
 static NSString const *AtomPlusName = @"atomplus";
 static NSString const *AtomMinusName = @"atomminus";
 static NSString const *PlayFieldName = @"playfield";
+static NSString const *DisplayScreenName = @"displayscreen";
+
 static NSString const *ATOMCOLOR = @"atomcolor";
 
 static CGFloat const AtomPlusVx = 0;

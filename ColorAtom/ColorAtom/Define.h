@@ -9,23 +9,23 @@
 #ifndef ColorAtom_Define_h
 #define ColorAtom_Define_h
 
-#define ZERO 0.5
-#define AtomRadius 30
+static CGFloat const ZERO  = 0.5;
+static CGFloat const AtomRadius = 30;
 
-#define AtomName @"atom"
-#define AtomPlusName @"atomplus"
-#define AtomMinusName @"atomminus"
-#define PlayFieldName @"playfield"
-#define ATOMCOLOR @"atomcolor"
+static NSString const *AtomName = @"atom";
+static NSString const *AtomPlusName = @"atomplus";
+static NSString const *AtomMinusName = @"atomminus";
+static NSString const *PlayFieldName = @"playfield";
+static NSString const *ATOMCOLOR = @"atomcolor";
 
-#define AtomPlusVx 0
-#define AtomPlusVy 1000
-#define AtomMinusVx 100
-#define AtomMinusVy -1000
+static CGFloat const AtomPlusVx = 0;
+static CGFloat const AtomPlusVy = 1000;
+static CGFloat const AtomMinusVx = 100;
+static CGFloat const AtomMinusVy = -1000;
 
-#define AtomPlusCreateInterval 0.5
-#define AtomMinusCreateInterval 1
+static CGFloat const AtomPlusCreateInterval = 0.5;
+static CGFloat const AtomMinusCreateInterval = 1;
 
-#define CreateAtomPlus @"createatomplus"
+static NSString const *CreateAtomPlus = @"createatomplus";
 
 #endif

@@ -10,7 +10,7 @@
 #define ColorAtom_Define_h
 
 static CGFloat const ZERO  = 0.5;
-static CGFloat const AtomRadius = 30;
+static CGFloat const AtomRadius = 25;
 
 static NSString const *AtomName = @"atom";
 static NSString const *AtomPlusName = @"atomplus";
@@ -22,7 +22,7 @@ static NSString const *ATOMCOLOR = @"atomcolor";
 
 static CGFloat const AtomPlusVx = 0;
 static CGFloat const AtomPlusVy = 1000;
-static CGFloat const AtomMinusVx = 100;
+static CGFloat const AtomMinusVx = 300;
 static CGFloat const AtomMinusVy = -1000;
 
 static CGFloat const AtomPlusCreateInterval = 0.5;

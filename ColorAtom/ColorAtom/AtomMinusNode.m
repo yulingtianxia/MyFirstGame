@@ -13,7 +13,7 @@
 {
     if (self = [super initWithName:(NSString*)AtomMinusName ImageName:@"Atomminus"]) {
         self.physicsBody.categoryBitMask = AtomMinusCategory;
-        self.physicsBody.velocity = CGVectorMake(skRand(-100, 100), -skRand(300, 500));
+        self.physicsBody.velocity = CGVectorMake(skRand(-200, 200), -skRand(400, 600));
 //        self.fire.position = CGPointMake(0, AtomRadius*2);
 //        self.fire.emissionAngle = 90;
     }

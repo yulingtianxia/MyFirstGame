@@ -14,7 +14,7 @@
 {
     if (self=[super init]) {
         label = [SKLabelNode node];
-        [label setFontColor:[UIColor blackColor]];
+        [label setFontColor:[UIColor whiteColor]];
         [self addChild:label];
     }
     return self;

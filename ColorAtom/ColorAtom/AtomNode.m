@@ -17,7 +17,7 @@
         self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:AtomRadius];
         self.physicsBody.dynamic = YES;
         self.physicsBody.contactTestBitMask = AtomPlusCategory|AtomMinusCategory|PlayFieldCategory;
-        self.physicsBody.linearDamping = 0.8;
+        self.physicsBody.linearDamping = 0.7;
         self.physicsBody.angularDamping = 0.8;
         self.userData = [NSMutableDictionary dictionaryWithDictionary:@{ATOMCOLOR:self.color}];
         self.name = name;

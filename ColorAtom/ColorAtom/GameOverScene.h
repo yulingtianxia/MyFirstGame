@@ -7,7 +7,8 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-
+#import "Background.h"
 @interface GameOverScene : SKScene
--(id)initWithSize:(CGSize)size won:(BOOL)won;
+@property Background *background;
+-(id)initWithSize:(CGSize)size Score:(NSInteger) score;
 @end

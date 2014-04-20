@@ -9,40 +9,29 @@
 #import "GameOverScene.h"
 #import "PlayFieldScene.h"
 @implementation GameOverScene
--(id)initWithSize:(CGSize)size won:(BOOL)won {
+@synthesize background;
+-(id)initWithSize:(CGSize)size Score:(NSInteger) score{
     if (self = [super initWithSize:size]) {
         
-        // 1
-        self.backgroundColor = [SKColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-        
-        // 2
-        NSString * message;
-        NSString * author = @"By yulingtianxia";
-        if (won) {
-            message = @"You Won!";
-        } else {
-            message = @"You Lose :(";
-        }
-        
-        // 3
-        SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        
-        label.text = message;
-        label.fontSize = 40;
-        label.fontColor = [SKColor blackColor];
-        label.position = CGPointMake(self.size.width/2, self.size.height/2);
-        SKLabelNode *authorlabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        authorlabel.text = author;
-        authorlabel.fontSize = 20;
-        authorlabel.fontColor = [SKColor blackColor];
-        authorlabel.position = CGPointMake(self.size.width-authorlabel.frame.size.width/2, authorlabel.frame.size.height/2);
-        
-        [self addChild:label];
-        [self addChild:authorlabel];
-        // 4
+        self.backgroundColor = [SKColor clearColor];
+        SKLabelNode *gameover = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        SKLabelNode *scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        gameover.text = @"GAME OVER";
+        gameover.fontSize = 40;
+        gameover.fontColor = [SKColor whiteColor];
+        gameover.position = CGPointMake(self.size.width/2, self.size.height/2);
+        [self addChild:gameover];
+        scoreLabel.text = [NSString stringWithFormat:@"SCORE:%ld",(long)score];
+        scoreLabel.fontSize = 40;
+        scoreLabel.fontColor = [SKColor whiteColor];
+        scoreLabel.position = CGPointMake(self.size.width/2, self.size.height/4);
+        [self addChild:scoreLabel];
+        background = [[Background alloc] init];
+        background.position = CGPointMake(self.size.width/2, self.size.height/2);
+        [self addChild:background];
         [self runAction:
          [SKAction sequence:@[
-                              [SKAction waitForDuration:3.0],
+                              [SKAction waitForDuration:5],
                               [SKAction runBlock:^{
              // 5
              SKTransition *reveal = [SKTransition flipHorizontalWithDuration:0.5];

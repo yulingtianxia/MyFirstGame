@@ -11,9 +11,12 @@
 @interface DisplayScreen : SKSpriteNode
 @property NSInteger atomCount;
 @property NSInteger score;
+@property NSInteger rank;
 @property SKLabelNode *atomCountLabel;
 @property SKLabelNode *scoreLabel;
+@property SKLabelNode *rankLabel;
 -(void)AtomMinusKilled;
--(void)AtomPlusUsed;
+-(void)AtomPlusUsed:(NSInteger) num;
 -(void)setPosition;
+-(void)AtomMinusAttacked;
 @end

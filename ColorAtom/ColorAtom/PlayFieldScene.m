@@ -16,6 +16,8 @@
 @synthesize playArea;
 @synthesize background;
 @synthesize displayScreen;
+@synthesize rank;
+NSInteger updateScore = 500;
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
@@ -47,6 +49,7 @@
         self.backgroundColor = [SKColor clearColor];
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
+        rank = 1;
 //          产生负离子
         [self createAtomMinus];
     }
@@ -64,22 +67,30 @@
 {
     [self enumerateChildNodesWithName:(NSString*)AtomMinusName usingBlock:^(SKNode *node, BOOL *stop) {
         if (node.position.y<3*AtomRadius) {
-            SKTransition *reveal = [SKTransition flipHorizontalWithDuration:0.5];
-            SKScene * gameOverScene = [[GameOverScene alloc] initWithSize:self.size won:NO];
-            [self.view presentScene:gameOverScene transition: reveal];
+            [displayScreen AtomMinusAttacked];
             *stop=YES;
             [node removeFromParent];
         }
         
     }];
-    
+    [self enumerateChildNodesWithName:(NSString *)AtomPlusName usingBlock:^(SKNode *node, BOOL *stop) {
+        if (node.position.y>self.size.height+AtomRadius) {
+            [node removeFromParent];
+        }
+    }];
     //add debug node
     [self addChild:debugOverlay];
 
 }
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-
+    
+    if (displayScreen.score>=updateScore) {
+        rank++;
+        updateScore+=500*rank;
+    }
+    displayScreen.rank = rank;
+//    debugOverlay.label.text = [NSString stringWithFormat:@"%ld",(long)rank];
     //添加debug信息
     [debugOverlay removeFromParent];
 //    [debugOverlay removeAllChildren];
@@ -89,7 +100,7 @@
 -(void)createAtomPlusAtPosition:(CGPoint) position
 {
     if (displayScreen.atomCount>0) {
-        [displayScreen AtomPlusUsed];
+        [displayScreen AtomPlusUsed:1];
         AtomNode *Atom = [[AtomPlusNode alloc] init];
         Atom.position = CGPointMake(position.x,AtomRadius);
         playArea.fillColor = Atom.color;
@@ -108,8 +119,17 @@
         
         [self addChild:Atom];
     }],
-                                                                       [SKAction waitForDuration:AtomMinusCreateInterval withRange:0.5]]]]];
-    
+                                                                       [SKAction waitForDuration:AtomMinusCreateInterval/rank withRange:0.5/rank]]]]];
+    [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction runBlock:^{
+        for (int i=0; i<rank; i++) {
+            AtomNode *Atom = [[AtomMinusNode alloc] init];
+            Atom.position = CGPointMake(skRand(AtomRadius, self.size.width-AtomRadius),self.size.height-AtomRadius);
+            
+            [self addChild:Atom];
+        }
+        
+    }],
+                                                                       [SKAction waitForDuration:AtomMinusCreateInterval*rank*10]]]]];
     
 }
 -(void)handlePanFrom:(UILongPressGestureRecognizer *)recognizer{

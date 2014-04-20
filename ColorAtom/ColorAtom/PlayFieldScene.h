@@ -27,4 +27,5 @@
 @property PlayerArea *playArea;
 @property Background *background;
 @property DisplayScreen *displayScreen;
+@property NSInteger rank;
 @end

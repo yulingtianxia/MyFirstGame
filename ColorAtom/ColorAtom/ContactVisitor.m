@@ -9,19 +9,15 @@
 #import "ContactVisitor.h"
 #import <objc/runtime.h>
 #import "NodeCategories.h"
-#import "AtomPlusNodeContactVisitor.h"
-#import "AtomMinusNodeContactVisitor.h"
+#import "AtomNodeContactVisitor.h"
 #import "PlayFieldSceneContactVisitor.h"
 @implementation ContactVisitor
 
 + (id)contactVisitorWithBody:(SKPhysicsBody *)body forContact:(SKPhysicsContact *)contact
 {
     //第一次dispatch，通过node类别返回对应的实例
-    if ((body.categoryBitMask&AtomPlusCategory)!=0) {
-        return [[AtomPlusNodeContactVisitor alloc] initWithBody:body forContact:contact];
-    }
-    if ((body.categoryBitMask&AtomMinusCategory)!=0) {
-        return [[AtomMinusNodeContactVisitor alloc] initWithBody:body forContact:contact];
+    if ((body.categoryBitMask&AtomCategory)!=0) {
+        return [[AtomNodeContactVisitor alloc] initWithBody:body forContact:contact];
     }
     if ((body.categoryBitMask&PlayFieldCategory)!=0) {
         return [[PlayFieldSceneContactVisitor alloc] initWithBody:body forContact:contact];

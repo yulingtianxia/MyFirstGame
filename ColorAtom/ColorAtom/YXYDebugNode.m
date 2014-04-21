@@ -9,14 +9,8 @@
 #import "YXYDebugNode.h"
 
 @implementation YXYDebugNode
-@synthesize label;
 -(id)init
 {
-    if (self=[super init]) {
-        label = [SKLabelNode node];
-        [label setFontColor:[UIColor whiteColor]];
-        [self addChild:label];
-    }
     return self;
 }
 @end

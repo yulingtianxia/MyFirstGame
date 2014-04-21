@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A425733518DEC6CC00AE4706 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A425733418DEC6CC00AE4706 /* GameOverScene.m */; };
+		A425733518DEC6CC00AE4706 /* YXYGameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A425733418DEC6CC00AE4706 /* YXYGameOverScene.m */; };
 		A4557AE018DE8A750060A32E /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = A4557ADE18DE8A750060A32E /* background-music-aac.caf */; };
 		A4557AE118DE8A750060A32E /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = A4557ADF18DE8A750060A32E /* pew-pew-lei.caf */; };
 		A4A9042018DC517400853CE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A9041F18DC517400853CE4 /* Foundation.framework */; };
@@ -39,8 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A425733318DEC6CC00AE4706 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
-		A425733418DEC6CC00AE4706 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
+		A425733318DEC6CC00AE4706 /* YXYGameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXYGameOverScene.h; sourceTree = "<group>"; };
+		A425733418DEC6CC00AE4706 /* YXYGameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXYGameOverScene.m; sourceTree = "<group>"; };
 		A4557ADE18DE8A750060A32E /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
 		A4557ADF18DE8A750060A32E /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
 		A4A9041C18DC517400853CE4 /* MyFirstGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,8 +97,8 @@
 			children = (
 				A4A9043918DC517400853CE4 /* PlayFieldScene.h */,
 				A4A9043A18DC517400853CE4 /* PlayFieldScene.m */,
-				A425733318DEC6CC00AE4706 /* GameOverScene.h */,
-				A425733418DEC6CC00AE4706 /* GameOverScene.m */,
+				A425733318DEC6CC00AE4706 /* YXYGameOverScene.h */,
+				A425733418DEC6CC00AE4706 /* YXYGameOverScene.m */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A425733518DEC6CC00AE4706 /* GameOverScene.m in Sources */,
+				A425733518DEC6CC00AE4706 /* YXYGameOverScene.m in Sources */,
 				A4A9043818DC517400853CE4 /* YXYViewController.m in Sources */,
 				A4A9043B18DC517400853CE4 /* PlayFieldScene.m in Sources */,
 				A4A9042E18DC517400853CE4 /* main.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "PlayFieldScene.h"
-#import "GameOverScene.h"
+#import "YXYGameOverScene.h"
 static const uint32_t projectileCategory     =  0x1 << 0;
 static const uint32_t monsterCategory        =  0x1 << 1;
 @implementation PlayFieldScene
@@ -79,7 +79,7 @@ static const uint32_t monsterCategory        =  0x1 << 1;
     SKAction * actionMoveDone = [SKAction removeFromParent];
     SKAction * loseAction = [SKAction runBlock:^{
         SKTransition *reveal = [SKTransition flipHorizontalWithDuration:0.5];
-        SKScene * gameOverScene = [[GameOverScene alloc] initWithSize:self.size won:NO];
+        SKScene * gameOverScene = [[YXYGameOverScene alloc] initWithSize:self.size won:NO];
         [self.view presentScene:gameOverScene transition: reveal];
     }];
     [monster runAction:[SKAction sequence:@[actionMove, loseAction, actionMoveDone]]];
@@ -115,7 +115,7 @@ static const uint32_t monsterCategory        =  0x1 << 1;
     self.monstersDestroyed++;
     if (self.monstersDestroyed == 30) {
         SKTransition *reveal = [SKTransition flipHorizontalWithDuration:0.5];
-        SKScene * gameOverScene = [[GameOverScene alloc] initWithSize:self.size won:YES];
+        SKScene * gameOverScene = [[YXYGameOverScene alloc] initWithSize:self.size won:YES];
         [self.view presentScene:gameOverScene transition: reveal];
     }
 }

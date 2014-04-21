@@ -17,11 +17,4 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     return skRandf()*(high - low) + low;
 }
 
-static inline CGFloat randAtom() {
-    if (skRandf()<0.5) {
-        return -1;
-    }
-    else
-        return 1;
-}
 #endif

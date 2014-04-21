@@ -9,29 +9,9 @@
 #ifndef ColorAtom_Define_h
 #define ColorAtom_Define_h
 
-#define WEIBO_APP_KEY  @"2357960990"
-#define WEIBO_APP_SECRET @"a3f965bb0d903cb4d8f1523c70e1ecb2"
-
-static CGFloat const ZERO  = 0.5;
-static CGFloat const AtomRadius = 25;
-
-static NSString const *AtomName = @"atom";
-static NSString const *AtomPlusName = @"atomplus";
-static NSString const *AtomMinusName = @"atomminus";
-static NSString const *PlayFieldName = @"playfield";
-static NSString const *DisplayScreenName = @"displayscreen";
-
-static NSString const *ATOMCOLOR = @"atomcolor";
-
-static CGFloat const AtomPlusVx = 0;
-static CGFloat const AtomPlusVy = 1000;
-static CGFloat const AtomMinusVx = 300;
-static CGFloat const AtomMinusVy = -1000;
-
-static CGFloat const AtomPlusCreateInterval = 0.5;
-static CGFloat const AtomMinusCreateInterval = 1;
-
-static NSString const *CreateAtomPlus = @"createatomplus";
-
+#define AtomRadius 30
+#define AtomName @"atom"
+#define PlayFieldName @"playfield"
+#define ZERO 0.3
 
 #endif

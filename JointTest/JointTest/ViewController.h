@@ -1,13 +1,14 @@
 //
-//  YXYDebugNode.h
-//  ColorAtom
+//  ViewController.h
+//  JointTest
 //
-//  Created by 杨萧玉 on 14-4-12.
+
 //  Copyright (c) 2014年 杨萧玉. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 
-@interface YXYDebugNode : SKNode
+@interface ViewController : UIViewController
 
 @end

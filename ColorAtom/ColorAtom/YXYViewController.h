@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
-@import AVFoundation;
 
 @interface YXYViewController : UIViewController
-@property (nonatomic) AVAudioPlayer * backgroundMusicPlayer;
+
 @end

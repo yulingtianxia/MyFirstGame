@@ -1,15 +1,15 @@
 //
-//  YXYViewController.m
-//  ColorAtom
+//  ViewController.m
+//  JointTest
 //
-//  Created by 杨萧玉 on 14-4-11.
+//  Created by 杨萧玉 on 14-4-21.
 //  Copyright (c) 2014年 杨萧玉. All rights reserved.
 //
 
-#import "YXYViewController.h"
-#import "PlayFieldScene.h"
+#import "ViewController.h"
+#import "MyScene.h"
 
-@implementation YXYViewController
+@implementation ViewController
 
 - (void)viewDidLoad
 {
@@ -21,7 +21,7 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [PlayFieldScene sceneWithSize:skView.bounds.size];
+    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.

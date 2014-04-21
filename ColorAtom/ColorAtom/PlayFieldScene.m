@@ -111,10 +111,10 @@ bool isAllAtomStatic = YES;
     ContactVisitor *visitorA = [ContactVisitor contactVisitorWithBody:contact.bodyA forContact:contact];
     VisitablePhysicsBody *visitableBodyB = [[VisitablePhysicsBody alloc] initWithBody:contact.bodyB];
     [visitableBodyB acceptVisitor:visitorA];
-    //B->A
-    ContactVisitor *visitorB = [ContactVisitor contactVisitorWithBody:contact.bodyB forContact:contact];
-    VisitablePhysicsBody *visitableBodyA = [[VisitablePhysicsBody alloc] initWithBody:contact.bodyA];
-    [visitableBodyA acceptVisitor:visitorB];
+//    //B->A
+//    ContactVisitor *visitorB = [ContactVisitor contactVisitorWithBody:contact.bodyB forContact:contact];
+//    VisitablePhysicsBody *visitableBodyA = [[VisitablePhysicsBody alloc] initWithBody:contact.bodyA];
+//    [visitableBodyA acceptVisitor:visitorB];
     
 }
 @end

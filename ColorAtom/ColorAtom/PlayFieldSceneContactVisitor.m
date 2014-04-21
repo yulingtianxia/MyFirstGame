@@ -15,7 +15,7 @@
     PlayFieldScene * playfield = (PlayFieldScene*)self.body.node;
     AtomNode * atom = (AtomNode*)atomBody.node;
     //球撞边界后边界的反馈
-    NSLog(@"%@->%@",playfield.name,atom.name);
+//    NSLog(@"%@->%@",playfield.name,atom.name);
 }
 
 @end

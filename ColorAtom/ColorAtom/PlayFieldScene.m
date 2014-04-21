@@ -45,6 +45,7 @@ NSInteger updateScore = 500;
         CGPathAddLineToPoint(path, 0, self.size.width, 0);
         CGPathAddLineToPoint(path, 0, self.size.width, self.size.height);
         self.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:path];
+        self.physicsBody.contactTestBitMask = 1;
         self.physicsBody.categoryBitMask = PlayFieldCategory;
         self.backgroundColor = [SKColor clearColor];
         self.physicsWorld.gravity = CGVectorMake(0, 0);

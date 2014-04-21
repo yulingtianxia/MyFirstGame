@@ -15,6 +15,7 @@
 @property SKLabelNode *atomCountLabel;
 @property SKLabelNode *scoreLabel;
 @property SKLabelNode *rankLabel;
+@property SKSpriteNode *atomIcon;
 -(void)AtomMinusKilled;
 -(void)AtomPlusUsed:(NSInteger) num;
 -(void)setPosition;

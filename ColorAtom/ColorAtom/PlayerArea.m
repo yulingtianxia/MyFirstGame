@@ -15,7 +15,7 @@
     CGPathAddRect(path, 0, CGRectMake(0, 0, self.scene.size.width, AtomRadius*2));
     self.path = path;
     self.strokeColor = [UIColor clearColor];
-    self.lineWidth = 1.5;
+    self.lineWidth = 1;
     self.glowWidth = 1;
     self.antialiased = YES;
     self.alpha = 0.8;

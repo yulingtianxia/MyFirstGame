@@ -54,13 +54,16 @@
 -(void) changeColorWithDiffAtom:(AtomNode *) atom{
     
     [self runAction:[SKAction sequence:@[[SKAction runBlock:^{
+        self.physicsBody.velocity = CGVectorMake(0, 0);
+        atom.physicsBody.velocity = CGVectorMake(0, 0);
         self.physicsBody.collisionBitMask = 0;
         self.physicsBody.contactTestBitMask = 0;
-        self.physicsBody.velocity = CGVectorMake(0, 0);
+
         self.physicsBody = NULL;
     }],
                                          [SKAction colorizeWithColor:[UIColor clearColor] colorBlendFactor:1 duration:0.5],
                                          [SKAction runBlock:^{
+        
         [self removeFromParent];
         
     }]]]];

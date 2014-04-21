@@ -10,5 +10,7 @@
 #import "Background.h"
 @interface GameOverScene : SKScene
 @property Background *background;
+@property NSInteger score;
+@property NSString *shareText;
 -(id)initWithSize:(CGSize)size Score:(NSInteger) score;
 @end

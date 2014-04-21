@@ -9,6 +9,9 @@
 #ifndef ColorAtom_Define_h
 #define ColorAtom_Define_h
 
+#define WEIBO_APP_KEY  @"2357960990"
+#define WEIBO_APP_SECRET @"a3f965bb0d903cb4d8f1523c70e1ecb2"
+
 static CGFloat const ZERO  = 0.5;
 static CGFloat const AtomRadius = 25;
 
@@ -29,5 +32,6 @@ static CGFloat const AtomPlusCreateInterval = 0.5;
 static CGFloat const AtomMinusCreateInterval = 1;
 
 static NSString const *CreateAtomPlus = @"createatomplus";
+
 
 #endif

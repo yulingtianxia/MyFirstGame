@@ -10,5 +10,7 @@
 
 @interface PlayFieldSceneContactVisitor : ContactVisitor
 //边界被atom撞了
--(void) visitAtomNode:(SKPhysicsBody *) atomBody;
+-(void) visitAtomPlusNode:(SKPhysicsBody *) atomBody;
+-(void) visitAtomMinusNode:(SKPhysicsBody *) atomBody;
+
 @end

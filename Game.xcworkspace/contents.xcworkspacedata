@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Nodes/Nodes.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:ColorAtom/ColorAtom.xcodeproj">
    </FileRef>
    <FileRef

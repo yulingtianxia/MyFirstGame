@@ -1,4 +1,4 @@
-MyFirstGame
+MyFirstGame [![Build Status](https://travis-ci.org/yulingtianxia/MyFirstGame.svg?branch=master)](https://travis-ci.org/yulingtianxia/MyFirstGame)
 ===========
 
 SpriteKit各种实验性工程
